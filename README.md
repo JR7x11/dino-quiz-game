@@ -1,8 +1,10 @@
-# Dino Quiz (Ahzirasaurus)
+# Dino Mash
 
 A dinosaur quiz where every 3 right answers earns a dino part. After 6 parts
 (body, arms, head, legs, tail, skin + color), the player meets their own
-"[Name]asaurus".
+"[Name]asaurus". Play it at https://dinomash.com
+
+Works on computers, tablets, and phones (phones held upright get their own tall layout).
 
 ## Run it
 
@@ -13,7 +15,12 @@ npm run dev
 
 Then open the address Vite prints (usually http://localhost:5173).
 
-`npm run build` makes a `dist/` folder you can upload to your site.
+`npm run build` makes a `dist/` folder with the finished site.
+
+## Publishing to DinoMash.com
+
+Every push to `main` builds the game and publishes it with GitHub Pages
+(see `.github/workflows/deploy.yml`). Nothing to upload by hand.
 
 ## Where things live
 

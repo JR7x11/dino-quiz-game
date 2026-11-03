@@ -1,4 +1,6 @@
 // Small UI helpers: text, buttons, panels, pop-up overlays.
+import { W, H } from './layout.js';
+
 export const FONT = '"Trebuchet MS", "Arial Rounded MT Bold", Verdana, sans-serif';
 export const INK = '#23331c';
 
@@ -49,7 +51,7 @@ export function button(scene, x, y, w, h, label, onClick, opts = {}) {
 // Dimmed full-screen layer that blocks clicks underneath. Destroy it to close.
 export function overlay(scene, depth = 100) {
   const c = scene.add.container(0, 0).setDepth(depth);
-  const dim = scene.add.rectangle(480, 300, 960, 600, 0x10200a, 0.6).setInteractive();
+  const dim = scene.add.rectangle(W / 2, H / 2, W, H, 0x10200a, 0.6).setInteractive();
   c.add(dim);
   return c;
 }

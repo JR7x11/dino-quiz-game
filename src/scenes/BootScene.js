@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { ART } from '../data/art.js';
 import { ATTACH, makePlaceholders } from '../placeholders.js';
+import { TEST_MODE } from '../layout.js';
 
 export default class BootScene extends Phaser.Scene {
   constructor() { super('Boot'); }
@@ -16,7 +17,6 @@ export default class BootScene extends Phaser.Scene {
   create() {
     makePlaceholders(this); // fills in anything that has no real art yet
     // add ?test to the address to open the hidden parts-test page
-    const testMode = new URLSearchParams(window.location.search).has('test');
-    this.scene.start(testMode ? 'Test' : 'Start');
+    this.scene.start(TEST_MODE ? 'Test' : 'Start');
   }
 }
