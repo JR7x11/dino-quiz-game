@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dino Quiz</title>
+    <style>
+      html, body { margin: 0; padding: 0; background: #bfdca6; font-family: "Trebuchet MS", Verdana, sans-serif; }
+      #game { width: 100%; max-width: 1100px; aspect-ratio: 960 / 600; margin: 0 auto; }
+      #save-area { text-align: center; padding: 16px 16px 40px; color: #23401a; }
+      #save-area p { font-size: 20px; margin: 8px 0 12px; }
+      #finalDino { max-width: min(600px, 100%); border: 4px solid #23401a; border-radius: 16px; background: #fff; }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+    <!-- The finished dino appears here as a normal image so it can be saved
+         with right-click > Save image (or press-and-hold on a tablet). -->
+    <div id="save-area" hidden>
+      <p>Want to keep your dino? Right-click it and choose <b>Save image</b> (or press and hold on a tablet).</p>
+      <img id="finalDino" alt="Your finished dinosaur" />
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
