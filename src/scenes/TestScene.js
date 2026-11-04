@@ -3,7 +3,7 @@
 // Checks that every combination of parts fits together.
 import Phaser from 'phaser';
 import { PART_OPTIONS, BODY_ANCHORS, COLORS, TEXTURES, DINOS, FRONT_LEGS } from '../data/parts.js';
-import { buildDino, fitDino, frontLegStretch } from '../dino.js';
+import { buildDino, fitDino, frontLegStretch, legScale } from '../dino.js';
 import { ATTACH } from '../placeholders.js';
 import { ART } from '../data/art.js';
 import { txt, button, overlay } from '../ui.js';
@@ -124,7 +124,7 @@ export default class TestScene extends Phaser.Scene {
     for (const b of PART_OPTIONS.body) {
       const A = BODY_ANCHORS[b];
       for (const l of PART_OPTIONS.legs) {
-        const foot = this.limbBottom(`${l}_legs`, A.hip[1]);
+        const foot = this.limbBottom(`${l}_legs`, A.hip[1], legScale(this, b, l));
         const belly = this.bodyBottom(b, A.hip[0]);
         if (foot < belly + 25) problems.push({ choice: { body: b, legs: l }, msg: `${DINOS[l]} legs on ${DINOS[b]} body: legs barely show below the belly` });
         for (const a of PART_OPTIONS.arms) {

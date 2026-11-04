@@ -93,11 +93,13 @@ export function buildDino(scene, choice) {
   const legKey = choice.legs && `${choice.legs}_legs`;
   const armKey = choice.arms && `${choice.arms}_arms`;
   const legFar = legKey && ART[legKey]?.far;   // real art with its own far-side leg
-  if (legFar) attachImage(scene, c, legFar, A.hip, color, tex);
-  else if (legKey) attachImage(scene, c, legKey, [A.hip[0] - 26, A.hip[1] - 10], shade, tex);
+  const legS = legScale(scene, choice.body, choice.legs);
+  if (legFar) attachImage(scene, c, legFar, A.hip, color, tex).setScale(legS);
+  else if (legKey) attachImage(scene, c, legKey, [A.hip[0] - 26, A.hip[1] - 10], shade, tex).setScale(legS);
   // Front legs from a different dino get stretched/shrunk so all four feet stand on the same ground.
   const armStretch = frontLegStretch(scene, choice);
-  if (armKey) attachImage(scene, c, armKey, [A.shoulder[0] - 22, A.shoulder[1] - 10], shade, tex).setScale(1, armStretch);
+  const armW = Math.min(1.2, Math.max(0.8, armStretch));   // front legs get a bit wider/narrower too, so they stay in proportion
+  if (armKey) attachImage(scene, c, armKey, [A.shoulder[0] - 22, A.shoulder[1] - 10], shade, tex).setScale(armW, armStretch);
 
   // Heads and tails from other dinos are resized to fit this body's neck and tail.
   const tailS = choice.tail ? jointScale(choice.body, choice.tail, 'tail') : 1;
@@ -113,22 +115,32 @@ export function buildDino(scene, choice) {
   if (choice.tail) attachBlend(scene, c, `${choice.tail}_tail`, A.tail_base, color, tex, false).setScale(tailS);
   if (choice.head) attachBlend(scene, c, `${choice.head}_head`, A.neck, color, tex, true).setScale(headS);
 
-  if (legKey) attachImage(scene, c, legKey, A.hip, color, tex);   // near leg layered on top of the body
-  if (armKey) attachImage(scene, c, armKey, A.shoulder, color, tex).setScale(1, armStretch);
+  if (legKey) attachImage(scene, c, legKey, A.hip, color, tex).setScale(legS);   // near leg layered on top of the body
+  if (armKey) attachImage(scene, c, armKey, A.shoulder, color, tex).setScale(armW, armStretch);
   return c;
 }
 
 // How much to stretch front legs so their feet line up with the back feet (1 = no change).
+// Legs from another dino are resized to the body's own leg length, so the body keeps its
+// natural stance and the thigh matches the hip (e.g. T. rex legs on an Ankylosaurus get shorter and slimmer).
+function limbLength(scene, key) {
+  if (!scene.textures.exists(key)) return 0;
+  return scene.textures.get(key).getSourceImage().height - (ATTACH[key] || [0, 0])[1];
+}
+export function legScale(scene, body, legs) {
+  if (!body || !legs || body === legs) return 1;
+  const own = limbLength(scene, `${body}_legs`), part = limbLength(scene, `${legs}_legs`);
+  if (!own || !part) return 1;
+  return Math.min(1.5, Math.max(0.6, own / part));
+}
+
+// How much to scale front legs so their feet line up with the back feet (1 = no change).
 export function frontLegStretch(scene, choice) {
   const { body, legs, arms } = choice;
   if (!body || !legs || !arms || !FRONT_LEGS.includes(arms)) return 1;
   const A = BODY_ANCHORS[body];
-  const lk = `${legs}_legs`, ak = `${arms}_arms`;
-  const lh = scene.textures.get(lk).getSourceImage().height;
-  const ah = scene.textures.get(ak).getSourceImage().height;
-  const ly = (ATTACH[lk] || [0, 0])[1], ay = (ATTACH[ak] || [0, 0])[1];
-  const backFoot = A.hip[1] - ly + lh;
-  const want = (backFoot - A.shoulder[1]) / (ah - ay);
+  const backFoot = A.hip[1] + limbLength(scene, `${legs}_legs`) * legScale(scene, body, legs);
+  const want = (backFoot - A.shoulder[1]) / limbLength(scene, `${arms}_arms`);
   return Math.min(1.6, Math.max(0.6, want));
 }
 
