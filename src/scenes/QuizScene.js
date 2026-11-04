@@ -21,7 +21,7 @@ const CHEERS = ['Correct!', 'You got it!', 'Dino-mite!', 'Roar-some!', 'Nailed i
 const L = PORTRAIT ? {
   dinoPanel: [20, 640, 560, 340 + E], dinoTitle: [CX, 668], dinoBox: [40, 690, 330, 270 + E],
   partText: [470, 720 + D], eggs: [410, 470, 530], eggY: 790 + D, rule: [470, 855 + D], score: [470, 915 + D], sideWrap: 190, sideSize: 21,
-  qPanel: [20, 20, 560, 190], qText: [CX, 115], qWrap: 510, qSize: 30,
+  qPanel: [20, 20, 560, 190], qText: [CX + 22, 115], qWrap: 470, qSize: 30,
   ansX: CX, ansW: 560, ansH: 80, ansY: [262, 352, 442, 532], ansSize: 25,
   feedback: [30, 584], fbWrap: 360, next: [480, 606, 170, 56],
   card: { cols: 2, cw: 255, ch: 240 + E / 4, gap: 18, top: 245 + E / 8 },
@@ -31,7 +31,7 @@ const L = PORTRAIT ? {
   popup: [40, 290 + D, 520, 420],
   namePanel: [30, 140 + D, 540, 720]
 } : {
-  dinoPanel: [20, 20, 320, 560], dinoTitle: [180, 50], dinoBox: [40, 80, 280, 300],
+  dinoPanel: [20, 20, 320, 560], dinoTitle: [205, 50], dinoBox: [40, 80, 280, 300],
   partText: [180, 420], eggs: [120, 180, 240], eggY: 470, rule: [180, 515], score: [180, 550], sideWrap: 290, sideSize: 17,
   qPanel: [360, 20, 580, 175], qText: [650, 107], qWrap: 530, qSize: 28,
   ansX: 650, ansW: 560, ansH: 66, ansY: [235, 312, 389, 466], ansSize: 23,
@@ -68,6 +68,7 @@ export default class QuizScene extends Phaser.Scene {
     this.add.rectangle(W / 2, H / 2, W, H, 0xe9f3dc);
     this.buildDinoPanel();
     this.buildQuestionArea();
+    this.addMenuButton();
 
     if (isAhzir(this.save.name)) this.showAhzirWelcome(() => this.askNext());
     else this.askNext();
@@ -76,12 +77,31 @@ export default class QuizScene extends Phaser.Scene {
   // ---------- layout ----------
   buildDinoPanel() {
     panel(this, ...L.dinoPanel, 0xfffaf0);
-    txt(this, ...L.dinoTitle, `Your ${dinoName(this.save.name)}`, 24, { fontStyle: 'bold', wordWrap: { width: PORTRAIT ? 520 : 290 } }).setOrigin(0.5);
+    txt(this, ...L.dinoTitle, `Your ${dinoName(this.save.name)}`, 24, { fontStyle: 'bold', wordWrap: { width: PORTRAIT ? 520 : 240 } }).setOrigin(0.5);
     this.partText = txt(this, ...L.partText, '', PORTRAIT ? 25 : 22, { fontStyle: 'bold', wordWrap: { width: L.sideWrap } }).setOrigin(0.5);
     this.eggs = L.eggs.map((x) => this.add.graphics({ x, y: L.eggY }));
     txt(this, ...L.rule, '3 right answers = a new part!', L.sideSize, { wordWrap: { width: L.sideWrap } }).setOrigin(0.5);
     this.scoreText = txt(this, ...L.score, '', L.sideSize + 1).setOrigin(0.5);
     this.refreshDinoPanel();
+  }
+
+  // ☰ in the top-left corner: leave for the main menu or Trophy Room (asks first, since this game won't be saved).
+  addMenuButton() {
+    const b = button(this, 46, 46, 50, 50, '\u2630', () => this.showMenu(), { size: 28, fill: 0xffffff });
+    b.setDepth(90);
+  }
+
+  showMenu() {
+    if (this.leaving) return;
+    const o = overlay(this, 110);
+    const p = this.popupPanel(o);
+    o.add(txt(this, CX, p.top + 55, 'Menu', 38, { fontStyle: 'bold', color: '#b34700' }).setOrigin(0.5));
+    o.add(txt(this, CX, p.top + 105, "Leaving now means this game won't count.", 21, { wordWrap: { width: p.wrap } }).setOrigin(0.5));
+    const go = (key) => { this.leaving = true; this.scene.start(key, key === 'Trophy' ? { back: 'Start' } : undefined); };
+    const by = p.top + 175, gap = PORTRAIT ? 80 : 72;
+    o.add(button(this, CX, by, 300, 62, '\u{1F3E0} Main Menu', () => go('Start'), { size: 26, fill: 0xffc93c }));
+    o.add(button(this, CX, by + gap, 300, 62, '\u{1F3C6} Trophy Room', () => go('Trophy'), { size: 26, fill: 0xffc93c }));
+    o.add(button(this, CX, by + gap * 2, 300, 62, 'Keep Playing', () => o.destroy(), { size: 26, fill: 0x8ee06b }));
   }
 
   refreshDinoPanel() {
