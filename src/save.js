@@ -5,6 +5,7 @@ function defaults() {
   return {
     name: null,          // player's name
     lastDino: null,      // part choices of the last finished dino (redrawn, never stored as an image)
+    lastDinoName: null,  // what the player named that dino
     scores: [],          // last 50 games: { date, correct, answered, pct }
     best: null,          // best game ever
     seenQuestions: []    // question ids already shown, so new games prefer fresh questions

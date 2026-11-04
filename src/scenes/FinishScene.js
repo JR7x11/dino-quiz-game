@@ -18,14 +18,16 @@ const L = PORTRAIT ? {
 export default class FinishScene extends Phaser.Scene {
   constructor() { super('Finish'); }
 
-  create({ choice, correct, answered }) {
+  create({ choice, correct, answered, dinoNick }) {
     const save = loadSave();
     const pct = answered ? Math.round((correct / answered) * 100) : 0;
     const record = { date: new Date().toISOString(), correct, answered, pct };
     const isBest = !save.best || pct > save.best.pct;
     save.scores = [record, ...save.scores].slice(0, 50);
     if (isBest) save.best = record;
+    const name = dinoNick || dinoName(save.name);
     save.lastDino = choice;
+    save.lastDinoName = name;
     saveGame(save);
 
     const C = L.card;
@@ -37,7 +39,7 @@ export default class FinishScene extends Phaser.Scene {
     g.lineStyle(5, 0x23331c, 1); g.strokeRoundedRect(C.x + 2, C.y + 2, C.w - 4, C.h - 4, 20);
     const dino = buildDino(this, choice);
     fitDino(dino, C.x + 30, C.y + 20, C.w - 60, C.h - 100);
-    txt(this, CX, C.y + C.h - 45, dinoName(save.name), 40, { fontStyle: 'bold', color: '#b34700' }).setOrigin(0.5);
+    txt(this, CX, C.y + C.h - 45, name, 40, { fontStyle: 'bold', color: '#b34700' }).setOrigin(0.5);
 
     let line = `You got ${correct} right out of ${answered} questions (${pct}%)`;
     if (isBest && save.scores.length > 1) line += '\nNew best score!';

@@ -4,7 +4,9 @@ import { QUESTIONS } from '../data/questions.js';
 import { FACTS } from '../data/facts.js';
 import { PART_ORDER, PART_TITLES, PART_OPTIONS, COLORS, TEXTURES, partLabel } from '../data/parts.js';
 import { buildDino, fitDino, partImage } from '../dino.js';
-import { txt, button, panel, overlay, shuffle } from '../ui.js';
+import { txt, button, panel, overlay, shuffle, FONT } from '../ui.js';
+import { isCleanName } from '../wordFilter.js';
+import { randomDinoName, MAX_DINO_NAME } from '../dinoNames.js';
 import { W, H, CX, PORTRAIT, EXTRA } from '../layout.js';
 
 const E = EXTRA, D = EXTRA / 2;
@@ -25,7 +27,8 @@ const L = PORTRAIT ? {
   pickPanel: [20, 20, 560, 960 + E], pickTitle: 75,
   skin: { panel: [20, 20, 560, 960 + E], title: 65, preview: [40, 110, 520, 300 + E], colorLabel: 445 + E, swX: (i) => 110 + (i % 5) * 95, swY: (i) => 495 + E + Math.floor(i / 5) * 75,
     skinLabel: 620 + E, skX: (i) => 130 + (i % 3) * 170, skY: (i) => 685 + E + Math.floor(i / 3) * 105, done: [CX, 915 + E] },
-  popup: [40, 290 + D, 520, 420]
+  popup: [40, 290 + D, 520, 420],
+  namePanel: [30, 140 + D, 540, 720]
 } : {
   dinoPanel: [20, 20, 320, 560], dinoTitle: [180, 50], dinoBox: [40, 80, 280, 300],
   partText: [180, 420], eggs: [120, 180, 240], eggY: 470, rule: [180, 515], score: [180, 550], sideWrap: 290, sideSize: 17,
@@ -36,7 +39,8 @@ const L = PORTRAIT ? {
   pickPanel: [40, 25, 880, 550], pickTitle: 68,
   skin: { panel: [30, 25, 900, 550], title: 65, preview: [55, 110, 370, 340], colorLabel: 110, swX: (i) => 530 + (i % 5) * 80, swY: (i) => 160 + Math.floor(i / 5) * 70,
     skinLabel: 290, skX: (i) => 560 + (i % 3) * 130, skY: (i) => 345 + Math.floor(i / 3) * 95, done: [240, 520] },
-  popup: [150, 110, 660, 380]
+  popup: [150, 110, 660, 380],
+  namePanel: [130, 30, 700, 540]
 };
 
 export default class QuizScene extends Phaser.Scene {
@@ -168,7 +172,8 @@ export default class QuizScene extends Phaser.Scene {
       this.partIndex++;
       this.refreshDinoPanel();
       if (this.partIndex >= PART_ORDER.length) {
-        this.scene.start('Finish', { choice: this.choice, correct: this.correct, answered: this.answered });
+        this.showNamePicker((dinoNick) =>
+          this.scene.start('Finish', { choice: this.choice, correct: this.correct, answered: this.answered, dinoNick }));
       } else {
         this.askNext();
       }
@@ -231,6 +236,55 @@ export default class QuizScene extends Phaser.Scene {
       card.on('pointerup', () => { this.choice[part] = dino; o.destroy(); done(); });
       o.add(card);
     });
+  }
+
+  // Last step: the player names their dinosaur (starts filled in with "[Name]asaurus").
+  showNamePicker(done) {
+    const [x, y, w, h] = L.namePanel;
+    const o = overlay(this);
+    o.add(panel(this, x, y, w, h, 0xfffaf0));
+    o.add(txt(this, CX, y + 50, 'Name your dinosaur!', 36, { fontStyle: 'bold', color: '#b34700' }).setOrigin(0.5));
+    const preview = buildDino(this, this.choice);
+    const boxH = Math.round(h * (PORTRAIT ? 0.42 : 0.36));
+    fitDino(preview, x + 30, y + 90, w - 60, boxH);
+    o.add(preview);
+
+    const inputY = y + 90 + boxH + 55;
+    const dom = this.add.dom(CX - 38, inputY).createFromHTML(
+      `<input type="text" id="dinoNameInput" maxlength="${MAX_DINO_NAME}" autocomplete="off"
+        style="font-size:28px;padding:10px 14px;border-radius:14px;border:3px solid #23331c;width:${PORTRAIT ? 340 : 380}px;
+        text-align:center;font-family:${FONT.replace(/"/g, "'")};outline:none;">`
+    );
+    const input = dom.getChildByID('dinoNameInput');
+    input.value = dinoName(this.save.name);
+
+    const hint = txt(this, CX, inputY + 92, '', 22, { color: '#b3261e', fontStyle: 'bold', wordWrap: { width: w - 60 } }).setOrigin(0.5);
+    o.add(txt(this, CX, inputY + 54, 'Keep it, type your own, or roll the dice!', 19).setOrigin(0.5));
+    o.add(hint);
+
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/[^A-Za-z ]/g, '').replace(/ {2,}/g, ' ').slice(0, MAX_DINO_NAME);
+      hint.setText('');
+    });
+
+    // 🎲 makes a silly name from the parts they picked
+    o.add(button(this, CX + (PORTRAIT ? 175 : 195), inputY, 64, 64, '\u{1F3B2}', () => {
+      let name = randomDinoName(this.choice);
+      for (let i = 0; i < 10 && !isCleanName(name); i++) name = randomDinoName(this.choice);
+      input.value = name;
+      hint.setText('');
+    }, { size: 30, fill: 0xffffff }));
+
+    const submit = () => {
+      const name = input.value.trim().replace(/\b\w/g, (c) => c.toUpperCase());
+      if (!name) { hint.setText('Give your dino a name!'); return; }
+      if (!isCleanName(name)) { hint.setText("Hmm, let's pick a different name!"); return; }
+      dom.destroy();
+      o.destroy();
+      done(name);
+    };
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
+    o.add(button(this, CX, y + h - 55, 280, 68, "That's the one!", submit, { size: 30, fill: 0x8ee06b }));
   }
 
   showSkinPicker(done) {

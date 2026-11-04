@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { loadSave, saveGame, dinoName } from '../save.js';
 import { buildDino, fitDino } from '../dino.js';
 import { txt, button, panel, overlay, FONT } from '../ui.js';
+import { isCleanName } from '../wordFilter.js';
 import { W, H, CX, PORTRAIT, EXTRA } from '../layout.js';
 
 const D = EXTRA / 2; // shift down to center on tall phones
@@ -63,6 +64,7 @@ export default class StartScene extends Phaser.Scene {
     const submit = () => {
       const name = input.value.trim();
       if (!name) { hint.setText('Type your name first!'); return; }
+      if (!isCleanName(name)) { hint.setText("Hmm, let's try a different name!"); return; }
       this.save.name = name.charAt(0).toUpperCase() + name.slice(1);
       saveGame(this.save);
       this.scene.restart();
@@ -77,7 +79,7 @@ export default class StartScene extends Phaser.Scene {
 
     const d = buildDino(this, lastDino || null);
     fitDino(d, ...L.dinoBox, lastDino ? 1 : 0.8);
-    txt(this, CX, L.dinoLabel, lastDino ? `Your last dino: ${dinoName(name)}` : 'Your first dino is waiting to hatch!', 22).setOrigin(0.5);
+    txt(this, CX, L.dinoLabel, lastDino ? `Your last dino: ${this.save.lastDinoName || dinoName(name)}` : 'Your first dino is waiting to hatch!', 22).setOrigin(0.5);
 
     const [px, py, pw, ph, ps] = L.play;
     button(this, px, py, pw, ph, 'PLAY!', () => this.scene.start('Quiz'), { size: ps, fill: 0x8ee06b });
