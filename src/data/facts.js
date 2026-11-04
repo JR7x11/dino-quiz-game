@@ -5,7 +5,7 @@ export const FACTS = [
   'Did you know there are more dinosaur fossils at the bottom of the ocean than on Mars?',
   'Did you know chickens are dinosaurs? So chicken nuggets are technically dinosaur nuggets!',
   'Did you know no T. rex has ever won a clapping contest?',
-  'Did you know a Brachiosaurus could have peeked into a fourth-floor window, if anyone had built one?',
+  'Did you know that Brachiosaurus could have peeked into a fourth-floor window, but everyone knows that most of them were too shy to do it?',
   'Did you know no Stegosaurus has ever sent a text message?',
   'Did you know dinosaurs grew new teeth their whole lives, so they never needed a dentist?',
   "Did you know some dinosaurs swallowed rocks on purpose to help mash up their food? (Please don't try this at home.)",

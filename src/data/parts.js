@@ -57,13 +57,13 @@ export const TEXTURES = {
   feathers: 'Feathers'
 };
 
-// Attachment points on each body, from Sutton's anchors.json.
+// Attachment points on each body (from Sutton's anchors.json; Triceratops and Brachiosaurus re-measured for their redraws).
 // Bodies are drawn on a 960x600 canvas with the top-left at (0,0).
 export const BODY_ANCHORS = {
   trex:          { tail_base: [130, 337], hip: [367, 422], shoulder: [628, 339], neck: [818, 259] },
-  triceratops:   { tail_base: [144, 344], hip: [383, 419], shoulder: [650, 348], neck: [822, 267] },
+  triceratops:   { tail_base: [128, 325], hip: [355, 400], shoulder: [645, 392], neck: [820, 242] }, // rounded-belly redraw
   stegosaurus:   { tail_base: [145, 437], hip: [354, 457], shoulder: [639, 411], neck: [826, 383] },
   spinosaurus:   { tail_base: [149, 409], hip: [355, 444], shoulder: [640, 408], neck: [826, 339] },
-  brachiosaurus: { tail_base: [130, 387], hip: [346, 413], shoulder: [645, 351], neck: [837, 283] },
+  brachiosaurus: { tail_base: [128, 372], hip: [345, 432], shoulder: [658, 422], neck: [822, 268] }, // rounded-belly redraw
   ankylosaurus:  { tail_base: [150, 343], hip: [367, 392], shoulder: [647, 352], neck: [831, 303] }
 };
