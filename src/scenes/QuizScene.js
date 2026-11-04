@@ -55,7 +55,10 @@ export default class QuizScene extends Phaser.Scene {
     this.answered = 0;
     this.locked = false;
     this.usedFacts = new Set();
-    this.factDeck = shuffle(FACTS.slice());
+    this.factsThisGame = new Set();
+    this.factCardsShown = 0;
+    // One of this game's fact cards is the personal one: "Did you know that <name> really enjoys..."
+    this.personalFactSlot = Phaser.Math.Between(0, PART_ORDER.length - 1);
 
     this.add.rectangle(W / 2, H / 2, W, H, 0xe9f3dc);
     this.buildDinoPanel();
@@ -195,9 +198,29 @@ export default class QuizScene extends Phaser.Scene {
     o.add(button(this, CX, p.bottom - 70, 240, 64, "Let's go!", () => { o.destroy(); done(); }, { size: 30, fill: 0x8ee06b }));
   }
 
+  // Next fun fact: ones this player has never seen come first, across all their games.
+  // Starts over only after every fact has been shown, and never repeats within a game.
+  nextFact() {
+    const seen = new Set(this.save.seenFacts || []);
+    let pool = FACTS.map((_, i) => i).filter((i) => !seen.has(i) && !this.factsThisGame.has(i));
+    if (!pool.length) {
+      this.save.seenFacts = [];
+      pool = FACTS.map((_, i) => i).filter((i) => !this.factsThisGame.has(i));
+    }
+    const i = Phaser.Utils.Array.GetRandom(pool);
+    this.factsThisGame.add(i);
+    this.save.seenFacts = [...(this.save.seenFacts || []), i];
+    saveGame(this.save);
+    return FACTS[i];
+  }
+
+  personalFact() {
+    return `Did you know that ${this.save.name} really enjoys learning about and talking about dinosaurs?`;
+  }
+
   showFact(done) {
-    if (!this.factDeck.length) this.factDeck = shuffle(FACTS.slice());
-    const fact = this.factDeck.pop();
+    const fact = this.factCardsShown === this.personalFactSlot ? this.personalFact() : this.nextFact();
+    this.factCardsShown++;
     const o = overlay(this);
     const p = this.popupPanel(o);
     o.add(txt(this, CX, p.top + 60, 'FUN FACT TIME!', 40, { fontStyle: 'bold', color: '#b34700' }).setOrigin(0.5));

@@ -8,7 +8,8 @@ function defaults() {
     lastDinoName: null,  // what the player named that dino
     scores: [],          // last 50 games: { date, correct, answered, pct }
     best: null,          // best game ever
-    seenQuestions: []    // question ids already shown, so new games prefer fresh questions
+    seenQuestions: [],   // question ids already shown, so new games prefer fresh questions
+    seenFacts: []        // fun-fact numbers already shown, so new games get fresh facts
   };
 }
 
