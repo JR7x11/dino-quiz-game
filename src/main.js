@@ -5,6 +5,7 @@ import StartScene from './scenes/StartScene.js';
 import QuizScene from './scenes/QuizScene.js';
 import FinishScene from './scenes/FinishScene.js';
 import TestScene from './scenes/TestScene.js';
+import TrophyScene from './scenes/TrophyScene.js';
 
 // Size the game box so the whole game fits on screen without scrolling.
 const box = document.getElementById('game');
@@ -23,7 +24,7 @@ const config = {
     expandParent: false, // keep the page from stretching to full window height
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [BootScene, StartScene, QuizScene, FinishScene, TestScene]
+  scene: [BootScene, StartScene, QuizScene, FinishScene, TrophyScene, TestScene]
 };
 
 window.dinoGame = new Phaser.Game(config);

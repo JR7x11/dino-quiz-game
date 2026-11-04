@@ -3,22 +3,26 @@ import { loadSave, saveGame, dinoName, isAhzir } from '../save.js';
 import { buildDino, fitDino } from '../dino.js';
 import { txt, button, panel, overlay } from '../ui.js';
 import { W, H, CX, PORTRAIT, EXTRA } from '../layout.js';
+import { recordGame } from '../progress.js';
+import { COLLECTIBLES, TROPHIES, RARITY } from '../data/collectibles.js';
+import { collectibleBadge, trophyCup } from '../trophyArt.js';
 
 const E = EXTRA;
 
 // The card is what gets turned into the saveable picture.
 const L = PORTRAIT ? {
   title: 50 + E / 8, card: { x: 20, y: 100 + E / 8, w: 560, h: 570 + (3 * E) / 4 }, stats: 730 + (7 * E) / 8,
-  again: [165, 840 + (7 * E) / 8, 250, 80], home: [435, 840 + (7 * E) / 8, 250, 80], popup: [30, 250 + E / 2, 540, 480]
+  again: [165, 815 + (7 * E) / 8, 250, 70], home: [435, 815 + (7 * E) / 8, 250, 70], trophy: [CX, 905 + (7 * E) / 8, 330, 64],
+  popup: [30, 250 + E / 2, 540, 480], reward: [30, 120 + E / 2, 540, 700]
 } : {
   title: 36, card: { x: 180, y: 70, w: 600, h: 380 }, stats: 480,
-  again: [370, 545, 200, 60], home: [590, 545, 200, 60], popup: [130, 110, 700, 380]
+  again: [370, 545, 200, 60], home: [590, 545, 200, 60], trophy: [830, 545, 230, 60], popup: [130, 110, 700, 380], reward: [130, 30, 700, 540]
 };
 
 export default class FinishScene extends Phaser.Scene {
   constructor() { super('Finish'); }
 
-  create({ choice, correct, answered, dinoNick }) {
+  create({ choice, correct, answered, dinoNick, stats = {} }) {
     const save = loadSave();
     const pct = answered ? Math.round((correct / answered) * 100) : 0;
     const record = { date: new Date().toISOString(), correct, answered, pct };
@@ -28,6 +32,8 @@ export default class FinishScene extends Phaser.Scene {
     const name = dinoNick || dinoName(save.name);
     save.lastDino = choice;
     save.lastDinoName = name;
+    // Trophy Room: stats, collectibles, fossil dig, trophies, dino shelf
+    const rewards = recordGame(save, { choice, name, correct, answered, ...stats });
     saveGame(save);
 
     const C = L.card;
@@ -47,6 +53,7 @@ export default class FinishScene extends Phaser.Scene {
 
     button(this, ...L.again, 'Play again', () => this.scene.start('Quiz'), { size: 28, fill: 0x8ee06b });
     button(this, ...L.home, 'Home', () => this.scene.start('Start'), { size: 28 });
+    button(this, ...L.trophy, '\u{1F3C6} Trophy Room', () => this.scene.start('Trophy', { back: 'Start' }), { size: PORTRAIT ? 26 : 20, fill: 0xffc93c });
 
     // Turn the card into a plain <img> under the game so it can be right-clicked > Save image.
     const area = document.getElementById('save-area');
@@ -58,10 +65,64 @@ export default class FinishScene extends Phaser.Scene {
     });
     this.events.once('shutdown', () => { if (area) area.hidden = true; });
 
-    if (isAhzir(save.name)) this.time.delayedCall(700, () => this.showHighScore());
+    // Pop-ups one after another: Ahzir's high score, the fossil dig, then anything new.
+    const queue = [];
+    if (isAhzir(save.name)) queue.push((next) => this.showHighScore(next));
+    queue.push((next) => this.showDig(rewards, save, next));
+    if (rewards.newCollectibles.length || rewards.newTrophies.length || rewards.newSets.length || rewards.shelfFull)
+      queue.push((next) => this.showNewStuff(rewards, name, next));
+    const run = () => { const f = queue.shift(); if (f) f(run); };
+    this.time.delayedCall(700, run);
   }
 
-  showHighScore() {
+  showDig(r, save, next) {
+    const o = overlay(this);
+    const [x, y, w, h] = L.popup;
+    o.add(panel(this, x, y, w, h, 0xf3e3c3));
+    o.add(txt(this, CX, y + 50, '\u26CF\uFE0F FOSSIL DIG! \u26CF\uFE0F', 40, { fontStyle: 'bold', color: '#5a3a1a' }).setOrigin(0.5));
+    if (r.dig) {
+      const item = COLLECTIBLES.find((c) => c.id === r.dig);
+      const badge = collectibleBadge(this, CX, y + 170, 150, item, true);
+      o.add(badge);
+      badge.setScale(0.2);
+      this.tweens.add({ targets: badge, scale: 1, duration: 450, ease: 'Back.easeOut' });
+      o.add(txt(this, CX, y + 275, `You found: ${item.name}!`, 30, { fontStyle: 'bold', color: '#b34700', wordWrap: { width: w - 40 } }).setOrigin(0.5));
+      o.add(txt(this, CX, y + 320, r.digNew ? 'NEW for your collection!' : `Another one! You have ${save.collected[r.dig]} now.`, 22, { fontStyle: 'bold' }).setOrigin(0.5));
+    } else {
+      o.add(txt(this, CX, y + 190, 'You dug and dug...\nbut found only dirt this time.\nBetter scores dig deeper!', 28, { wordWrap: { width: w - 40 } }).setOrigin(0.5));
+    }
+    o.add(button(this, CX, y + h - 55, 200, 60, 'Cool!', () => { o.destroy(); next(); }, { size: 28, fill: 0x8ee06b }));
+  }
+
+  showNewStuff(r, dinoNickName, next) {
+    const o = overlay(this);
+    const [x, y, w, h] = L.reward;
+    o.add(panel(this, x, y, w, h, 0xfff3c4));
+    o.add(txt(this, CX, y + 45, 'NEW IN YOUR TROPHY ROOM!', PORTRAIT ? 30 : 34, { fontStyle: 'bold', color: '#b34700' }).setOrigin(0.5));
+    const items = [
+      ...r.newCollectibles.map((id) => ({ kind: 'col', it: COLLECTIBLES.find((c) => c.id === id) })),
+      ...r.newTrophies.map((id) => ({ kind: 'trophy', it: TROPHIES.find((t) => t.id === id) }))
+    ].slice(0, 6);
+    const cols = PORTRAIT ? 3 : 6, cell = (w - 40) / cols, size = 90;
+    items.forEach(({ kind, it }, i) => {
+      const cx = x + 20 + cell * (i % cols) + cell / 2, cy = y + 140 + Math.floor(i / cols) * 165;
+      o.add(kind === 'col' ? collectibleBadge(this, cx, cy, size, it, true) : trophyCup(this, cx, cy, size, it, true));
+      const label = kind === 'col' ? it.name : `${it.name}\n(${RARITY[it.rarity].name} trophy)`;
+      o.add(txt(this, cx, cy + size / 2 + 8, label, 16, { fontStyle: 'bold', wordWrap: { width: cell - 6 } }).setOrigin(0.5, 0));
+    });
+    const more = r.newCollectibles.length + r.newTrophies.length - items.length;
+    let ty = y + (items.length > cols ? 140 + 2 * 165 - 20 : items.length ? 140 + 165 - 20 : 110);
+    if (more > 0) { o.add(txt(this, CX, ty, `...and ${more} more!`, 20, { fontStyle: 'bold' }).setOrigin(0.5)); ty += 34; }
+    for (const s of r.newSets) {
+      o.add(txt(this, CX, ty + 10, `\u2B50 ${s.name} complete! New color unlocked: ${s.reward.name}`, 21, { fontStyle: 'bold', color: '#2e6b1f', wordWrap: { width: w - 40 } }).setOrigin(0.5));
+      ty += 56;
+    }
+    if (r.shelfFull) o.add(txt(this, CX, ty + 20, `Your dino shelf is full! Open the Trophy Room to swap "${dinoNickName}" in.`, 20, { wordWrap: { width: w - 40 } }).setOrigin(0.5));
+    o.add(button(this, CX - 130, y + h - 55, 230, 60, 'Trophy Room', () => this.scene.start('Trophy', { back: 'Start' }), { size: 24, fill: 0xffc93c }));
+    o.add(button(this, CX + 130, y + h - 55, 230, 60, 'Awesome!', () => { o.destroy(); next(); }, { size: 24, fill: 0x8ee06b }));
+  }
+
+  showHighScore(next = () => {}) {
     const o = overlay(this);
     const [x, y, w, h] = L.popup;
     o.add(panel(this, x, y, w, h, 0xfff3c4));
@@ -69,6 +130,6 @@ export default class FinishScene extends Phaser.Scene {
     o.add(title);
     this.tweens.add({ targets: title, scale: 1.08, yoyo: true, repeat: -1, duration: 500, ease: 'Sine.easeInOut' });
     o.add(txt(this, CX, y + h / 2 + 10, "Tell your dad you got the high score,\nand if he doesn't believe you,\ntell him to look it up!", 30, { fontStyle: 'bold', wordWrap: { width: w - 40 } }).setOrigin(0.5));
-    o.add(button(this, CX, y + h - 60, 200, 60, 'Woo-hoo!', () => o.destroy(), { size: 28, fill: 0x8ee06b }));
+    o.add(button(this, CX, y + h - 60, 200, 60, 'Woo-hoo!', () => { o.destroy(); next(); }, { size: 28, fill: 0x8ee06b }));
   }
 }

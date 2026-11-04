@@ -13,16 +13,16 @@ const L = PORTRAIT ? {
   panel: [30, 210 + D, 540, 600],
   nameQ: 270 + D, nameInput: 380 + D, nameHint: 450 + D, nameBtn: 540 + D,
   welcome: 260 + D, dinoBox: [60, 300 + D, 480, 340], dinoLabel: 680 + D,
-  play: [CX, 760 + D, 300, 90, 40],
-  hist: [165, 900 + D, 250, 70], change: [435, 900 + D, 250, 70],
+  play: [CX, 735 + D, 300, 80, 40], trophy: [CX, 858 + D, 300, 64],
+  hist: [165, 942 + D, 250, 54], change: [435, 942 + D, 250, 54],
   histPanel: [30, 60 + D, 540, 880], histRowY: 200 + D, histRowGap: 52, histSize: 20, histClose: 870 + D
 } : {
   title: [CX, 52, 64], sub: [CX, 108, 22],
   panel: [230, 140, 500, 330],
   nameQ: 205, nameInput: 290, nameHint: 345, nameBtn: 405,
   welcome: 178, dinoBox: [270, 210, 420, 200], dinoLabel: 430,
-  play: [CX, 515, 240, 70, 34],
-  hist: [170, 515, 210, 54], change: [790, 515, 210, 54],
+  play: [CX, 510, 240, 70, 34], trophy: [175, 510, 240, 62],
+  hist: [785, 510, 240, 62], change: [CX, 572, 200, 40],
   histPanel: [180, 50, 600, 500], histRowY: 170, histRowGap: 30, histSize: 20, histClose: 505
 };
 
@@ -83,12 +83,13 @@ export default class StartScene extends Phaser.Scene {
 
     const [px, py, pw, ph, ps] = L.play;
     button(this, px, py, pw, ph, 'PLAY!', () => this.scene.start('Quiz'), { size: ps, fill: 0x8ee06b });
+    button(this, ...L.trophy, '\u{1F3C6} Trophy Room', () => this.scene.start('Trophy', { back: 'Start' }), { size: PORTRAIT ? 26 : 24, fill: 0xffc93c });
     button(this, ...L.hist, 'Score History', () => this.showHistory(), { size: 22, fill: 0xffffff });
     button(this, ...L.change, 'Change name', () => {
       this.save.name = null;
       saveGame(this.save);
       this.scene.restart();
-    }, { size: 22, fill: 0xffffff });
+    }, { size: PORTRAIT ? 22 : 18, fill: 0xffffff });
   }
 
   showHistory() {

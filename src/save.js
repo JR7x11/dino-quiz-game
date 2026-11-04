@@ -1,4 +1,5 @@
 // Everything is stored in this browser only (localStorage). Nothing is sent anywhere.
+import { ensureProgress } from './progress.js';
 const KEY = 'dinoQuizSave.v1';
 
 function defaults() {
@@ -16,9 +17,9 @@ function defaults() {
 export function loadSave() {
   try {
     const raw = localStorage.getItem(KEY);
-    if (raw) return { ...defaults(), ...JSON.parse(raw) };
+    if (raw) return ensureProgress({ ...defaults(), ...JSON.parse(raw) });
   } catch (e) { /* storage blocked or corrupt: start fresh */ }
-  return defaults();
+  return ensureProgress(defaults());
 }
 
 export function saveGame(save) {

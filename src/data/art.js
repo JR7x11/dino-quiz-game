@@ -17,6 +17,8 @@
 //               (the main image is then layered ON TOP of the body, like a real thigh).
 // Limbs without a far image get an automatic darker copy behind the body.
 
+import { PORTRAIT } from '../layout.js';
+
 export const ART = {
   // T. rex: first real set (cut out, scaled to the body, joints softened)
   trex_body: { file: 'art/trex_body.png' },
@@ -65,5 +67,41 @@ export const ART = {
   tex_bumpy: { file: 'art/texture_bumpy.png' },
   tex_armorplates: { file: 'art/texture_armorplates.png' },
   tex_spikes: { file: 'art/texture_spikes.png' },
-  tex_feathers: { file: 'art/texture_feathers.png' }
+  tex_feathers: { file: 'art/texture_feathers.png' },
+
+  // Trophy Room pieces
+  stone_sign: { file: 'art/stone_sign.webp' },
+  statue_stand: { file: 'art/statue_stand.webp' },
+  trophy_bg: { file: 'art/trophy_bg.webp' },
+  dino_cabinet: { file: PORTRAIT ? 'art/cabinet_tall.webp' : 'art/cabinet_wide.webp' },
+
+  // Trophy Room collectibles and trophy cup (320px squares). Missing ones still show their emoji.
+  col_amber_bug: { file: 'art/col_amber_bug.png' },
+  col_arm_dumbbells: { file: 'art/col_arm_dumbbells.png' },
+  col_comeback_kid: { file: 'art/col_comeback_kid.png' },
+  col_diamond_egg: { file: 'art/col_diamond_egg.png' },
+  col_dino_poop: { file: 'art/col_dino_poop.png' },
+  col_dino_toothbrush: { file: 'art/col_dino_toothbrush.png' },
+  col_exp_eggs: { file: 'art/col_exp_eggs.png' },
+  col_exp_extinction: { file: 'art/col_exp_extinction.png' },
+  col_exp_names: { file: 'art/col_exp_names.png' },
+  col_exp_raptor: { file: 'art/col_exp_raptor.png' },
+  col_exp_sea: { file: 'art/col_exp_sea.png' },
+  col_exp_sky: { file: 'art/col_exp_sky.png' },
+  col_golden_fossil: { file: 'art/col_golden_fossil.png' },
+  col_lucky_dice: { file: 'art/col_lucky_dice.png' },
+  col_megalodon_tooth: { file: 'art/col_megalodon_tooth.png' },
+  col_meteorite_chip: { file: 'art/col_meteorite_chip.png' },
+  col_mismatched_socks: { file: 'art/col_mismatched_socks.png' },
+  col_raptor_feather: { file: 'art/col_raptor_feather.png' },
+  col_rubber_chicken: { file: 'art/col_rubber_chicken.png' },
+  col_sabertooth_fang: { file: 'art/col_sabertooth_fang.png' },
+  col_sharp_claw: { file: 'art/col_sharp_claw.png' },
+  col_skel_ankylosaurus: { file: 'art/col_skel_ankylosaurus.png' },
+  col_skel_brachiosaurus: { file: 'art/col_skel_brachiosaurus.png' },
+  col_skel_spinosaurus: { file: 'art/col_skel_spinosaurus.png' },
+  col_skel_stegosaurus: { file: 'art/col_skel_stegosaurus.png' },
+  col_skel_trex: { file: 'art/col_skel_trex.png' },
+  col_skel_triceratops: { file: 'art/col_skel_triceratops.png' },
+  trophy_cup: { file: 'art/trophy_cup.png' }
 };

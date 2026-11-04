@@ -8,6 +8,7 @@ import { txt, button, panel, overlay, shuffle, FONT } from '../ui.js';
 import { isCleanName } from '../wordFilter.js';
 import { randomDinoName, MAX_DINO_NAME } from '../dinoNames.js';
 import { W, H, CX, PORTRAIT, EXTRA } from '../layout.js';
+import { topicsOf, bonusColors } from '../progress.js';
 
 const E = EXTRA, D = EXTRA / 2;
 
@@ -57,6 +58,10 @@ export default class QuizScene extends Phaser.Scene {
     this.usedFacts = new Set();
     this.factsThisGame = new Set();
     this.factCardsShown = 0;
+    // Trophy Room tracking for this game
+    this.streak = 0; this.bestStreak = 0;
+    this.hadWrong = false; this.comebackRun = 0; this.comeback = false;
+    this.sillyPicks = 0; this.topicRight = {};
     // One of this game's fact cards is the personal one: "Did you know that <name> really enjoys..."
     this.personalFactSlot = Phaser.Math.Between(0, PART_ORDER.length - 1);
 
@@ -147,12 +152,17 @@ export default class QuizScene extends Phaser.Scene {
     if (btn.answer.correct) {
       this.correct++;
       this.toward++;
+      this.streak++; this.bestStreak = Math.max(this.bestStreak, this.streak);
+      if (this.hadWrong && ++this.comebackRun >= 5) this.comeback = true;
+      for (const t of topicsOf(this.current)) this.topicRight[t] = (this.topicRight[t] || 0) + 1;
       btn.setFill(0x8ee06b);
       this.feedback.setText(Phaser.Utils.Array.GetRandom(CHEERS)).setColor('#2e6b1f');
       this.tweens.add({ targets: btn, scale: 1.06, yoyo: true, duration: 140 });
       this.refreshDinoPanel();
       this.time.delayedCall(1100, () => this.afterAnswer());
     } else {
+      this.streak = 0; this.hadWrong = true; this.comebackRun = 0;
+      if (btn.answer.type === 'silly') this.sillyPicks++;
       btn.setFill(0xff8a7a);
       right.setFill(0x8ee06b);
       const msg = btn.answer.type === 'silly'
@@ -175,8 +185,11 @@ export default class QuizScene extends Phaser.Scene {
       this.partIndex++;
       this.refreshDinoPanel();
       if (this.partIndex >= PART_ORDER.length) {
-        this.showNamePicker((dinoNick) =>
-          this.scene.start('Finish', { choice: this.choice, correct: this.correct, answered: this.answered, dinoNick }));
+        this.showNamePicker((dinoNick, diceName) =>
+          this.scene.start('Finish', {
+            choice: this.choice, correct: this.correct, answered: this.answered, dinoNick,
+            stats: { bestStreak: this.bestStreak, comeback: this.comeback, silly: this.sillyPicks, topics: this.topicRight, diceName }
+          }));
       } else {
         this.askNext();
       }
@@ -285,9 +298,11 @@ export default class QuizScene extends Phaser.Scene {
     o.add(txt(this, CX, inputY + 54, 'Keep it, type your own, or roll the dice!', 19).setOrigin(0.5));
     o.add(hint);
 
+    let fromDice = false;  // for the Lucky Dice collectible
     input.addEventListener('input', () => {
       input.value = input.value.replace(/[^A-Za-z ]/g, '').replace(/ {2,}/g, ' ').slice(0, MAX_DINO_NAME);
       hint.setText('');
+      fromDice = false;
     });
 
     // 🎲 makes a silly name from the parts they picked
@@ -296,6 +311,7 @@ export default class QuizScene extends Phaser.Scene {
       for (let i = 0; i < 10 && !isCleanName(name); i++) name = randomDinoName(this.choice);
       input.value = name;
       hint.setText('');
+      fromDice = true;
     }, { size: 30, fill: 0xffffff }));
 
     const submit = () => {
@@ -304,7 +320,7 @@ export default class QuizScene extends Phaser.Scene {
       if (!isCleanName(name)) { hint.setText("Hmm, let's pick a different name!"); return; }
       dom.destroy();
       o.destroy();
-      done(name);
+      done(name, fromDice);
     };
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
     o.add(button(this, CX, y + h - 55, 280, 68, "That's the one!", submit, { size: 30, fill: 0x8ee06b }));
@@ -330,10 +346,16 @@ export default class QuizScene extends Phaser.Scene {
 
     const labelX = PORTRAIT ? CX : 690;
     o.add(txt(this, labelX, S.colorLabel, 'Color', 26, { fontStyle: 'bold' }).setOrigin(0.5));
-    const swatches = COLORS.map((col, i) => {
-      const x = S.swX(i), y = S.swY(i);
-      const mark = this.add.circle(x, y, 33).setStrokeStyle(6, 0xff7a00).setVisible(false);
-      const dot = this.add.circle(x, y, 26, col.hex).setStrokeStyle(3, 0x23331c).setInteractive({ useHandCursor: true });
+    const colors = [...COLORS, ...bonusColors(this.save)];
+    const many = colors.length > 10;   // bonus colors unlocked: smaller dots, 8 per row
+    const swatches = colors.map((col, i) => {
+      let x = S.swX(i), y = S.swY(i), r = 26;
+      if (many) {
+        const per = 8, gap = PORTRAIT ? 62 : 46, x0 = PORTRAIT ? CX : 690;
+        x = x0 + ((i % per) - (per - 1) / 2) * gap; y = S.swY(0) + Math.floor(i / per) * (PORTRAIT ? 70 : 62); r = PORTRAIT ? 24 : 19;
+      }
+      const mark = this.add.circle(x, y, r + 7).setStrokeStyle(6, 0xff7a00).setVisible(false);
+      const dot = this.add.circle(x, y, r, col.hex).setStrokeStyle(3, 0x23331c).setInteractive({ useHandCursor: true });
       dot.on('pointerup', () => { this.choice.color = col.hex; redraw(); });
       o.add([mark, dot]);
       return { hex: col.hex, mark };
