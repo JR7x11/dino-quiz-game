@@ -60,7 +60,7 @@ export const ART = {
   spinosaurus_tail: { file: 'art/spinosaurus_tail.png', attach: [490, 61] },
   brachiosaurus_tail: { file: 'art/brachiosaurus_tail.png', attach: [508, 55] },
 
-  // Skin textures (seamless 256px gray tiles; the game adds the color).
+  // Skin textures (seamless gray tiles; the game adds the color).
   tex_scaly: { file: 'art/texture_scaly.png' },
   tex_bumpy: { file: 'art/texture_bumpy.png' },
   tex_armorplates: { file: 'art/texture_armorplates.png' },
