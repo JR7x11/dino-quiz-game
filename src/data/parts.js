@@ -67,3 +67,31 @@ export const BODY_ANCHORS = {
   brachiosaurus: { tail_base: [128, 372], hip: [345, 432], shoulder: [658, 422], neck: [822, 268] }, // rounded-belly redraw
   ankylosaurus:  { tail_base: [150, 343], hip: [367, 392], shoulder: [647, 352], neck: [831, 303] }
 };
+
+// Joint sizes (pixels, measured from the art) so every head and tail fits the body it's on.
+// STUB = how thick each body's neck and tail ends are.
+// JOINT = how thick each head's neck end and each tail's base is.
+// A part is resized so it's just a little wider than the stub it plugs into, so the
+// body's outline flows into the part instead of jumping in or out.
+export const STUB = {
+  trex:          { neck: 106, tail: 69 },
+  triceratops:   { neck: 91,  tail: 65 },
+  stegosaurus:   { neck: 72,  tail: 54 },
+  spinosaurus:   { neck: 80,  tail: 73 },
+  brachiosaurus: { neck: 74,  tail: 68 },
+  ankylosaurus:  { neck: 69,  tail: 78 }
+};
+export const JOINT = {
+  trex:          { neck: 149, tail: 90 },
+  triceratops:   { neck: 122, tail: 87 },
+  stegosaurus:   { neck: 106, tail: 94 },
+  spinosaurus:   { neck: 135, tail: 91 },  // neck measured below the sail
+  brachiosaurus: { neck: 97,  tail: 104 },
+  ankylosaurus:  { neck: 126, tail: 100 }  // tail measured without the knobs
+};
+const OVERLAP = 1.2;  // part ends up 20% wider than the stub, so it wraps the joint
+export function jointScale(body, partDino, joint) {
+  const s = STUB[body]?.[joint], j = JOINT[partDino]?.[joint];
+  if (!s || !j) return 1;
+  return Math.min(1.4, Math.max(0.6, (s * OVERLAP) / j));
+}

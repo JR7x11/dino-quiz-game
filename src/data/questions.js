@@ -327,8 +327,8 @@ export const QUESTIONS = [
     q: 'The neck frill and venom spitting of Dilophosaurus in the movies were...',
     answers: [
       { text: 'Made up for the movies', correct: true },
-      { text: 'Proven by fossils', type: 'believable' },
-      { text: 'Only true for babies', type: 'kinda' },
+      { text: 'Webbed toes for swimming', type: 'believable' },
+      { text: 'Wide, flat feet for wading', type: 'kinda' },
       { text: 'True only on Tuesdays', type: 'silly' }
     ]
   },
@@ -487,8 +487,8 @@ export const QUESTIONS = [
     q: 'The T. rex named Sue is on display in a museum in which city?',
     answers: [
       { text: 'Chicago', correct: true },
-      { text: 'Paris', type: 'believable' },
-      { text: 'Tokyo', type: 'kinda' },
+      { text: 'On four legs', type: 'believable' },
+      { text: 'On two legs, dragging its tail on the ground', type: 'kinda' },
       { text: 'Under your bed', type: 'silly' }
     ]
   },
@@ -547,8 +547,8 @@ export const QUESTIONS = [
     q: 'Hundreds of Coelophysis skeletons were found together at Ghost Ranch in which US state?',
     answers: [
       { text: 'New Mexico', correct: true },
-      { text: 'Florida', type: 'believable' },
-      { text: 'Alaska', type: 'kinda' },
+      { text: 'Only its arms', type: 'believable' },
+      { text: 'Only its tail', type: 'kinda' },
       { text: 'Atlantis', type: 'silly' }
     ]
   },
@@ -637,8 +637,8 @@ export const QUESTIONS = [
     q: 'Cryolophosaurus had a crest that earned it what nickname?',
     answers: [
       { text: '\'Elvisaurus\'', correct: true },
-      { text: '\'Mohawkasaurus\'', type: 'believable' },
-      { text: '\'Crownasaurus\'', type: 'kinda' },
+      { text: 'Above each eye', type: 'believable' },
+      { text: 'On the back of its head', type: 'kinda' },
       { text: '\'Hairspray Rex\'', type: 'silly' }
     ]
   },
@@ -647,8 +647,8 @@ export const QUESTIONS = [
     q: 'Ceratosaurus had a horn where?',
     answers: [
       { text: 'On its nose', correct: true },
-      { text: 'On its tail', type: 'believable' },
-      { text: 'On its knees', type: 'kinda' },
+      { text: 'Green, scaly skin', type: 'believable' },
+      { text: 'Habit of lying in rivers', type: 'kinda' },
       { text: 'On its birthday hat', type: 'silly' }
     ]
   },
@@ -769,8 +769,8 @@ export const QUESTIONS = [
     q: 'Brachiosaurus had big nose openings in its skull that were...',
     answers: [
       { text: 'High up on its head, above its eyes', correct: true },
-      { text: 'At the tip of its tail', type: 'believable' },
-      { text: 'On its back', type: 'kinda' },
+      { text: 'At the very tip of its snout', type: 'believable' },
+      { text: 'On the sides of its jaw', type: 'kinda' },
       { text: 'On its elbows', type: 'silly' }
     ]
   },
@@ -879,8 +879,8 @@ export const QUESTIONS = [
     q: 'Hadrosaurs had hundreds of teeth packed together in rows called...',
     answers: [
       { text: 'Dental batteries', correct: true },
-      { text: 'Tooth towers', type: 'believable' },
-      { text: 'Bite blocks', type: 'kinda' },
+      { text: 'Gastroliths', type: 'believable' },
+      { text: 'Osteoderms', type: 'kinda' },
       { text: 'Chompy stacks', type: 'silly' }
     ]
   },
@@ -920,7 +920,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Helmet', correct: true },
       { text: 'Long tube', type: 'believable' },
-      { text: 'Bowling ball', type: 'kinda' },
+      { text: 'Round knob', type: 'kinda' },
       { text: 'Party hat', type: 'silly' }
     ]
   },
@@ -929,7 +929,7 @@ export const QUESTIONS = [
     q: 'Lambeosaurus had a hollow crest shaped like a...',
     answers: [
       { text: 'Hatchet (axe)', correct: true },
-      { text: 'Dinner plate', type: 'believable' },
+      { text: 'Short spike', type: 'believable' },
       { text: 'Long trumpet', type: 'kinda' },
       { text: 'Pizza slice', type: 'silly' }
     ]
@@ -989,7 +989,7 @@ export const QUESTIONS = [
     q: 'Unlike some of its cousins, Triceratops had a frill that was...',
     answers: [
       { text: 'Solid bone without big holes', correct: true },
-      { text: 'Made of feathers', type: 'believable' },
+      { text: 'Covered in long spikes', type: 'believable' },
       { text: 'Full of big windows', type: 'kinda' },
       { text: 'Inflatable', type: 'silly' }
     ]
@@ -1009,8 +1009,8 @@ export const QUESTIONS = [
     q: 'Styracosaurus had a frill with...',
     answers: [
       { text: 'Long spikes', correct: true },
-      { text: 'Feathers', type: 'believable' },
-      { text: 'Flowers', type: 'kinda' },
+      { text: 'Smooth edges', type: 'believable' },
+      { text: 'Short bumps', type: 'kinda' },
       { text: 'Birthday candles', type: 'silly' }
     ]
   },
@@ -1069,8 +1069,8 @@ export const QUESTIONS = [
     q: 'An armored dinosaur found in Canada was so well preserved it looks like a...',
     answers: [
       { text: 'Sleeping statue with its armor still in place', correct: true },
-      { text: 'Flat pile of sand', type: 'believable' },
-      { text: 'Single leaf', type: 'kinda' },
+      { text: 'Jumble of scattered bones', type: 'believable' },
+      { text: 'Flattened pancake of bone', type: 'kinda' },
       { text: 'Plastic toy', type: 'silly' }
     ]
   },
@@ -1079,8 +1079,8 @@ export const QUESTIONS = [
     q: 'Euoplocephalus was so well armored it even had bony plates on its...',
     answers: [
       { text: 'Eyelids', correct: true },
-      { text: 'Teeth', type: 'believable' },
-      { text: 'Tongue', type: 'kinda' },
+      { text: 'Toes', type: 'believable' },
+      { text: 'Belly', type: 'kinda' },
       { text: 'Shoes', type: 'silly' }
     ]
   },
@@ -1109,8 +1109,8 @@ export const QUESTIONS = [
     q: 'Grass was rare or missing for most of the dinosaur age. Plant-eaters mostly ate...',
     answers: [
       { text: 'Ferns, conifers, cycads and other plants', correct: true },
-      { text: 'Grass and corn', type: 'believable' },
-      { text: 'Only seaweed', type: 'kinda' },
+      { text: 'Mostly grass', type: 'believable' },
+      { text: 'Mostly fruit and nuts', type: 'kinda' },
       { text: 'Salad with ranch', type: 'silly' }
     ]
   },
@@ -1170,7 +1170,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'On four legs', correct: true },
       { text: 'On two legs', type: 'believable' },
-      { text: 'On their tails', type: 'kinda' },
+      { text: 'On two legs, only when running', type: 'kinda' },
       { text: 'Hopping like kangaroos', type: 'silly' }
     ]
   },
@@ -1180,7 +1180,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Very small', correct: true },
       { text: 'Very big', type: 'believable' },
-      { text: 'Exactly the same size as their bodies', type: 'kinda' },
+      { text: 'Huge, with big jaws', type: 'kinda' },
       { text: 'Square like a box', type: 'silly' }
     ]
   },
@@ -1210,7 +1210,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Running', correct: true },
       { text: 'Swimming in the ocean', type: 'believable' },
-      { text: 'Flying', type: 'kinda' },
+      { text: 'Climbing trees', type: 'kinda' },
       { text: 'Knitting', type: 'silly' }
     ]
   },
@@ -1231,8 +1231,8 @@ export const QUESTIONS = [
     q: "Ankylosaurus's tail club was made of...",
     answers: [
       { text: 'Big bony lumps joined together', correct: true },
-      { text: 'Wood', type: 'believable' },
-      { text: 'Hair', type: 'kinda' },
+      { text: "Solid horn, like a rhino's", type: 'believable' },
+      { text: 'Cartilage, like a nose', type: 'kinda' },
       { text: 'Bubblegum', type: 'silly' }
     ]
   },
@@ -1241,8 +1241,8 @@ export const QUESTIONS = [
     q: "Triceratops's brow horns could be about as long as a...",
     answers: [
       { text: 'Baseball bat (about 1 meter)', correct: true },
-      { text: 'Pencil', type: 'believable' },
-      { text: 'School bus', type: 'kinda' },
+      { text: 'Ruler (30 cm)', type: 'believable' },
+      { text: 'Car (4 meters)', type: 'kinda' },
       { text: 'Noodle', type: 'silly' }
     ]
   },
@@ -1262,7 +1262,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Two staggered rows', correct: true },
       { text: 'One single row', type: 'believable' },
-      { text: 'A circle', type: 'kinda' },
+      { text: 'Three rows', type: 'kinda' },
       { text: 'Neat little piles', type: 'silly' }
     ]
   },
@@ -1271,7 +1271,7 @@ export const QUESTIONS = [
     q: "Spinosaurus's sail was held up by...",
     answers: [
       { text: 'Very long spines on its backbone', correct: true },
-      { text: 'Bendy straws', type: 'believable' },
+      { text: 'Thick muscles', type: 'believable' },
       { text: 'Feathers', type: 'kinda' },
       { text: 'A tiny mast and rope', type: 'silly' }
     ]
@@ -1302,7 +1302,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Hollow, with tubes inside', correct: true },
       { text: 'Solid rock', type: 'believable' },
-      { text: 'Full of feathers', type: 'kinda' },
+      { text: 'Made of skin only', type: 'kinda' },
       { text: 'Full of jellybeans', type: 'silly' }
     ]
   },
@@ -1362,7 +1362,7 @@ export const QUESTIONS = [
     answers: [
       { text: '10 or more elephants', correct: true },
       { text: '1 cow', type: 'believable' },
-      { text: '1 cat', type: 'kinda' },
+      { text: '2 horses', type: 'kinda' },
       { text: 'A loaf of bread', type: 'silly' }
     ]
   },
@@ -1421,7 +1421,7 @@ export const QUESTIONS = [
     q: 'The word \'dinosaur\' means...',
     answers: [
       { text: '\'Terrible lizard\'', correct: true },
-      { text: '\'Big chicken\'', type: 'believable' },
+      { text: '\'Giant lizard\'', type: 'believable' },
       { text: '\'Old bones\'', type: 'kinda' },
       { text: "\"Dino's sore\"", type: 'silly' }
     ]
@@ -1502,7 +1502,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Hell Creek Formation', correct: true },
       { text: 'Morrison Formation', type: 'believable' },
-      { text: 'Gobi Ocean', type: 'kinda' },
+      { text: 'Burgess Shale', type: 'kinda' },
       { text: 'Sandbox Formation', type: 'silly' }
     ]
   },
@@ -1532,7 +1532,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Remains or traces of ancient life preserved in rock', correct: true },
       { text: 'A type of shiny crystal', type: 'believable' },
-      { text: 'A baby dinosaur', type: 'kinda' },
+      { text: 'A dinosaur bone that never changed', type: 'kinda' },
       { text: 'A kind of cookie', type: 'silly' }
     ]
   },
@@ -1572,7 +1572,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, they study ancient humans; paleontologists study dinosaurs', correct: true },
       { text: "Yes, it's their main job", type: 'believable' },
-      { text: 'Only on weekends', type: 'kinda' },
+      { text: 'Yes, but only in Egypt', type: 'kinda' },
       { text: 'Only with spoons', type: 'silly' }
     ]
   },
@@ -1581,8 +1581,8 @@ export const QUESTIONS = [
     q: 'When a bone becomes a fossil, minerals usually...',
     answers: [
       { text: 'Slowly fill in or replace parts of it, turning it rock-like', correct: true },
-      { text: 'Turn it into gold', type: 'believable' },
-      { text: 'Make it glow', type: 'kinda' },
+      { text: 'Dissolve it away completely', type: 'believable' },
+      { text: 'Turn it into crystal', type: 'kinda' },
       { text: 'Make it soft like jelly', type: 'silly' }
     ]
   },
@@ -1592,7 +1592,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Yes, and some show scales', correct: true },
       { text: 'No, never', type: 'believable' },
-      { text: 'Only in movies', type: 'kinda' },
+      { text: 'Only from baby dinosaurs', type: 'kinda' },
       { text: 'Yes, with tattoos', type: 'silly' }
     ]
   },
@@ -1602,7 +1602,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'By studying tiny pigment structures in fossil feathers or skin', correct: true },
       { text: 'By guessing from the color of the rock', type: 'believable' },
-      { text: 'By asking a crocodile', type: 'kinda' },
+      { text: 'By looking at living lizards', type: 'kinda' },
       { text: 'With a magic crayon', type: 'silly' }
     ]
   },
@@ -1611,8 +1611,8 @@ export const QUESTIONS = [
     q: 'Long rows of sauropod footprints side by side suggest some sauropods...',
     answers: [
       { text: 'Walked in groups', correct: true },
-      { text: 'Could fly', type: 'believable' },
-      { text: 'Walked backward', type: 'kinda' },
+      { text: 'Swam across lakes', type: 'believable' },
+      { text: 'Walked one at a time', type: 'kinda' },
       { text: 'Hopped on one leg', type: 'silly' }
     ]
   },
@@ -1642,7 +1642,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Amber (fossil tree sap)', correct: true },
       { text: 'Ice', type: 'believable' },
-      { text: 'Honey', type: 'kinda' },
+      { text: 'Volcanic ash', type: 'kinda' },
       { text: 'Jell-O', type: 'silly' }
     ]
   },
@@ -1662,7 +1662,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Triassic, Jurassic, Cretaceous', correct: true },
       { text: 'Jurassic, Ice Age, Stone Age', type: 'believable' },
-      { text: 'Spring, Summer, Fall', type: 'kinda' },
+      { text: 'Triassic, Jurassic, Ice Age', type: 'kinda' },
       { text: 'Breakfast, Lunch, Dinner', type: 'silly' }
     ]
   },
@@ -1682,7 +1682,7 @@ export const QUESTIONS = [
     answers: [
       { text: '66 million years ago', correct: true },
       { text: '6,600 years ago', type: 'believable' },
-      { text: '66 years ago', type: 'kinda' },
+      { text: '660 million years ago', type: 'kinda' },
       { text: 'Last Thursday', type: 'silly' }
     ]
   },
@@ -1702,7 +1702,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Chicxulub', correct: true },
       { text: 'Meteor Crater', type: 'believable' },
-      { text: 'Grand Canyon', type: 'kinda' },
+      { text: 'Crater Lake', type: 'kinda' },
       { text: 'The Big Oopsie', type: 'silly' }
     ]
   },
@@ -1712,7 +1712,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Birds, crocodiles, turtles, and mammals', correct: true },
       { text: 'Only T. rex', type: 'believable' },
-      { text: 'No animals at all', type: 'kinda' },
+      { text: 'Only insects', type: 'kinda' },
       { text: 'Only unicorns', type: 'silly' }
     ]
   },
@@ -1722,7 +1722,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Pangaea', correct: true },
       { text: 'Atlantis', type: 'believable' },
-      { text: 'Australia', type: 'kinda' },
+      { text: 'Laurasia', type: 'kinda' },
       { text: 'Pancake-a', type: 'silly' }
     ]
   },
@@ -1733,8 +1733,8 @@ export const QUESTIONS = [
     q: 'Did people and non-bird dinosaurs ever live at the same time?',
     answers: [
       { text: 'No, those dinosaurs were gone over 60 million years before people', correct: true },
-      { text: 'Yes, cave people rode them', type: 'believable' },
-      { text: 'Yes, but only in Africa', type: 'kinda' },
+      { text: 'Yes, for a short time at the end', type: 'believable' },
+      { text: 'Yes, early humans hunted them', type: 'kinda' },
       { text: 'Yes, they shared lunch', type: 'silly' }
     ]
   },
@@ -1743,8 +1743,8 @@ export const QUESTIONS = [
     q: 'Was the woolly mammoth a dinosaur?',
     answers: [
       { text: 'No, it was a mammal related to elephants', correct: true },
-      { text: 'Yes, a hairy one', type: 'believable' },
-      { text: 'Yes, a baby Brachiosaurus', type: 'kinda' },
+      { text: 'Yes, a hairy kind of dinosaur', type: 'believable' },
+      { text: 'No, it was a giant rhino', type: 'kinda' },
       { text: 'No, it was a giant fuzzy taco', type: 'silly' }
     ]
   },
@@ -1763,8 +1763,8 @@ export const QUESTIONS = [
     q: 'Mosasaurus was a giant sea reptile. Was it a dinosaur?',
     answers: [
       { text: 'No, it was a giant sea lizard', correct: true },
-      { text: 'Yes, a swimming T. rex', type: 'believable' },
-      { text: 'Yes, a fish dinosaur', type: 'kinda' },
+      { text: 'Yes, a swimming dinosaur', type: 'believable' },
+      { text: 'No, it was a giant fish', type: 'kinda' },
       { text: 'No, it was a submarine', type: 'silly' }
     ]
   },
@@ -1794,7 +1794,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Gave birth to live babies in the water', correct: true },
       { text: 'Laid eggs on the beach', type: 'believable' },
-      { text: 'Lived in trees', type: 'kinda' },
+      { text: 'Laid eggs in floating nests', type: 'kinda' },
       { text: 'Built sandcastles', type: 'silly' }
     ]
   },
@@ -1823,7 +1823,7 @@ export const QUESTIONS = [
     q: "Quetzalcoatlus's wingspan was about as wide as a...",
     answers: [
       { text: 'Small airplane (about 10 meters)', correct: true },
-      { text: 'Skateboard', type: 'believable' },
+      { text: 'Kite (about 2 meters)', type: 'believable' },
       { text: 'Football field', type: 'kinda' },
       { text: 'Shoebox', type: 'silly' }
     ]
@@ -1884,7 +1884,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Teeth and a long bony tail', correct: true },
       { text: 'Horns and a frill', type: 'believable' },
-      { text: 'Fur and whiskers', type: 'kinda' },
+      { text: 'Fur on its body', type: 'kinda' },
       { text: 'A propeller', type: 'silly' }
     ]
   },
@@ -1913,8 +1913,8 @@ export const QUESTIONS = [
     q: 'Like birds, many theropods had bones with...',
     answers: [
       { text: 'Air spaces inside', correct: true },
-      { text: 'Wood inside', type: 'believable' },
-      { text: 'Water inside', type: 'kinda' },
+      { text: 'Solid bone all the way through', type: 'believable' },
+      { text: 'Fat inside', type: 'kinda' },
       { text: 'Pudding inside', type: 'silly' }
     ]
   },
@@ -1923,8 +1923,8 @@ export const QUESTIONS = [
     q: 'Some dinosaur fossils show them sitting on nests with their arms spread out like...',
     answers: [
       { text: 'A bird keeping its eggs warm', correct: true },
-      { text: 'A frog', type: 'believable' },
-      { text: 'A dog digging', type: 'kinda' },
+      { text: 'A crocodile guarding eggs', type: 'believable' },
+      { text: 'A turtle burying eggs', type: 'kinda' },
       { text: 'A soccer goalie', type: 'silly' }
     ]
   },
@@ -1934,7 +1934,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Hard shells, like bird eggs', correct: true },
       { text: 'No shells at all', type: 'believable' },
-      { text: 'Fur', type: 'kinda' },
+      { text: 'Bumpy shells made of bone', type: 'kinda' },
       { text: 'Bubble wrap', type: 'silly' }
     ]
   },
@@ -1943,8 +1943,8 @@ export const QUESTIONS = [
     q: 'Scientists found that some dinosaurs, like Protoceratops, may have laid eggs that were...',
     answers: [
       { text: 'Soft and leathery', correct: true },
-      { text: 'Square', type: 'believable' },
-      { text: 'Made of glass', type: 'kinda' },
+      { text: 'Hard as stone', type: 'believable' },
+      { text: 'Huge, as big as basketballs', type: 'kinda' },
       { text: 'Chocolate', type: 'silly' }
     ]
   },
@@ -1953,8 +1953,8 @@ export const QUESTIONS = [
     q: 'A baby dinosaur that just came out of its egg is called a...',
     answers: [
       { text: 'Hatchling', correct: true },
-      { text: 'Kitten', type: 'believable' },
-      { text: 'Tadpole', type: 'kinda' },
+      { text: 'Fledgling', type: 'believable' },
+      { text: 'Cub', type: 'kinda' },
       { text: 'Dino-nugget', type: 'silly' }
     ]
   },
@@ -1964,7 +1964,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'In big groups, near each other', correct: true },
       { text: 'Only on mountaintops', type: 'believable' },
-      { text: 'In the ocean', type: 'kinda' },
+      { text: 'Alone, far from others', type: 'kinda' },
       { text: 'In shopping carts', type: 'silly' }
     ]
   },
@@ -1973,8 +1973,8 @@ export const QUESTIONS = [
     q: "Since we can't hear dinosaurs, scientists guess their sounds by studying...",
     answers: [
       { text: 'Their skulls, crests, and living relatives like birds', correct: true },
-      { text: 'Old recordings', type: 'believable' },
-      { text: 'Dinosaur sheet music', type: 'kinda' },
+      { text: 'Their footprints', type: 'believable' },
+      { text: 'The size of their teeth', type: 'kinda' },
       { text: 'Their phone calls', type: 'silly' }
     ]
   },
@@ -1984,7 +1984,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'The spacing of its footprints', correct: true },
       { text: 'The color of its bones', type: 'believable' },
-      { text: 'Its favorite food', type: 'kinda' },
+      { text: 'The length of its tail', type: 'kinda' },
       { text: 'Its race trophies', type: 'silly' }
     ]
   },
@@ -2003,8 +2003,8 @@ export const QUESTIONS = [
     q: 'Scientists split dinosaurs into two big groups based on their...',
     answers: [
       { text: 'Hip bones', correct: true },
-      { text: 'Eye color', type: 'believable' },
-      { text: 'Favorite snacks', type: 'kinda' },
+      { text: 'Teeth', type: 'believable' },
+      { text: 'Skulls', type: 'kinda' },
       { text: 'Number of tails', type: 'silly' }
     ]
   },
@@ -2024,7 +2024,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Straight under their bodies', correct: true },
       { text: 'Sprawled out to the sides', type: 'believable' },
-      { text: 'Behind their heads', type: 'kinda' },
+      { text: "Bent like a frog's", type: 'kinda' },
       { text: 'In their pockets', type: 'silly' }
     ]
   },
@@ -2034,7 +2034,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, many had scales', correct: true },
       { text: 'Yes, every single one', type: 'believable' },
-      { text: 'No, they all had fur', type: 'kinda' },
+      { text: 'Yes, even the biggest ones', type: 'kinda' },
       { text: 'They all wore sweaters', type: 'silly' }
     ]
   },
@@ -2044,7 +2044,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Slowly drifted apart', correct: true },
       { text: 'Stayed exactly where they are now', type: 'believable' },
-      { text: 'Were all underwater', type: 'kinda' },
+      { text: 'Moved together into one big piece', type: 'kinda' },
       { text: 'Floated like rafts in the sky', type: 'silly' }
     ]
   },
@@ -2053,8 +2053,8 @@ export const QUESTIONS = [
     q: 'The Jurassic Period is named after...',
     answers: [
       { text: 'The Jura Mountains in Europe', correct: true },
-      { text: 'A dinosaur named Jurassic', type: 'believable' },
-      { text: 'A movie', type: 'kinda' },
+      { text: 'A Latin word for \'giant\'', type: 'believable' },
+      { text: 'A town in England', type: 'kinda' },
       { text: 'A juice brand', type: 'silly' }
     ]
   },
@@ -2063,8 +2063,8 @@ export const QUESTIONS = [
     q: '\'Cretaceous\' comes from the Latin word for...',
     answers: [
       { text: 'Chalk', correct: true },
-      { text: 'Dragon', type: 'believable' },
-      { text: 'Egg', type: 'kinda' },
+      { text: 'Lizard', type: 'believable' },
+      { text: 'Ocean', type: 'kinda' },
       { text: 'Crayon', type: 'silly' }
     ]
   },
@@ -2073,8 +2073,8 @@ export const QUESTIONS = [
     q: 'The Triassic got its name because...',
     answers: [
       { text: 'Its rock layers in Germany come in three parts', correct: true },
-      { text: 'It had only three dinosaurs', type: 'believable' },
-      { text: 'It lasted three years', type: 'kinda' },
+      { text: 'It had three kinds of dinosaurs', type: 'believable' },
+      { text: 'It came third in time', type: 'kinda' },
       { text: 'Everything had three horns', type: 'silly' }
     ]
   },
@@ -2094,7 +2094,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Warmer than today', correct: true },
       { text: 'Colder than today, with ice everywhere', type: 'believable' },
-      { text: 'Exactly like today', type: 'kinda' },
+      { text: 'About the same as today', type: 'kinda' },
       { text: 'Made of cheese', type: 'silly' }
     ]
   },
@@ -2114,7 +2114,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Replace lost teeth again and again', correct: true },
       { text: 'Never lose a tooth', type: 'believable' },
-      { text: 'Grow teeth on their tails', type: 'kinda' },
+      { text: 'Grow only one set of teeth', type: 'kinda' },
       { text: 'Order new teeth online', type: 'silly' }
     ]
   },
@@ -2124,7 +2124,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Gizzard', correct: true },
       { text: 'Lungs', type: 'believable' },
-      { text: 'Feathers', type: 'kinda' },
+      { text: 'Beak', type: 'kinda' },
       { text: 'Pockets', type: 'silly' }
     ]
   },
@@ -2153,8 +2153,8 @@ export const QUESTIONS = [
     q: "Scientists call dinosaurs that aren't birds...",
     answers: [
       { text: 'Non-avian dinosaurs', correct: true },
-      { text: 'Old dinosaurs', type: 'believable' },
-      { text: 'Fake dinosaurs', type: 'kinda' },
+      { text: 'Ancient dinosaurs', type: 'believable' },
+      { text: 'Reptile dinosaurs', type: 'kinda' },
       { text: 'Bird-less nuggets', type: 'silly' }
     ]
   },
@@ -2183,8 +2183,8 @@ export const QUESTIONS = [
     q: 'Dinosaur scientific names usually come from...',
     answers: [
       { text: 'Greek or Latin words', correct: true },
-      { text: 'Random letters', type: 'believable' },
-      { text: 'Pirate words', type: 'kinda' },
+      { text: 'English words', type: 'believable' },
+      { text: 'Made-up words with no meaning', type: 'kinda' },
       { text: 'Emoji', type: 'silly' }
     ]
   },
@@ -2203,8 +2203,8 @@ export const QUESTIONS = [
     q: 'Many skeletons in museums are...',
     answers: [
       { text: 'Casts, which are copies of the real bones', correct: true },
-      { text: 'Robots', type: 'believable' },
-      { text: 'Made of chocolate', type: 'kinda' },
+      { text: 'Carved from wood', type: 'believable' },
+      { text: 'Plastic models made from drawings', type: 'kinda' },
       { text: 'Real bones painted gold', type: 'silly' }
     ]
   },
@@ -2214,7 +2214,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Sue Hendrickson, the person who found it', correct: true },
       { text: 'A famous queen', type: 'believable' },
-      { text: "The museum's cat", type: 'kinda' },
+      { text: "The scientist's daughter", type: 'kinda' },
       { text: 'A song', type: 'silly' }
     ]
   },
@@ -2446,7 +2446,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Sold at auction for about 32 million dollars', correct: true },
       { text: 'Found in Antarctica', type: 'believable' },
-      { text: 'Turned into a robot', type: 'kinda' },
+      { text: 'Found in a backyard', type: 'kinda' },
       { text: 'Taught to dance', type: 'silly' }
     ]
   },
@@ -2465,8 +2465,8 @@ export const QUESTIONS = [
     q: "Even though they were short, T. rex's arms were...",
     answers: [
       { text: 'Strong and muscular', correct: true },
-      { text: 'Floppy and weak as noodles', type: 'believable' },
-      { text: 'Made of feathers only', type: 'kinda' },
+      { text: 'Weak and floppy', type: 'believable' },
+      { text: 'Used for walking', type: 'kinda' },
       { text: 'Great at playing piano', type: 'silly' }
     ]
   },
@@ -2476,7 +2476,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Crush bone', correct: true },
       { text: 'Cut through steel', type: 'believable' },
-      { text: 'Chew gum forever', type: 'kinda' },
+      { text: 'Only bite soft food', type: 'kinda' },
       { text: 'Break the sound barrier', type: 'silly' }
     ]
   },
@@ -2485,7 +2485,7 @@ export const QUESTIONS = [
     q: 'A giant T. rex coprolite (fossil poop) was found to contain...',
     answers: [
       { text: 'Bits of crushed bone', correct: true },
-      { text: 'Gold nuggets', type: 'believable' },
+      { text: 'Seeds', type: 'believable' },
       { text: 'Leaves', type: 'kinda' },
       { text: 'Broccoli', type: 'silly' }
     ]
@@ -2506,7 +2506,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, they lived millions of years apart', correct: true },
       { text: 'Yes, they were neighbors', type: 'believable' },
-      { text: 'Only at the beach', type: 'kinda' },
+      { text: 'Yes, near rivers', type: 'kinda' },
       { text: 'Yes, they ate lunch together', type: 'silly' }
     ]
   },
@@ -2536,7 +2536,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Not armored', correct: true },
       { text: 'Covered in spikes', type: 'believable' },
-      { text: 'See-through', type: 'kinda' },
+      { text: 'Covered in thick plates', type: 'kinda' },
       { text: 'Ticklish', type: 'silly' }
     ]
   },
@@ -2576,7 +2576,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Held their tails up off the ground', correct: true },
       { text: 'Had no tails', type: 'believable' },
-      { text: 'Wrapped their tails around trees', type: 'kinda' },
+      { text: 'Used their tails as a third leg', type: 'kinda' },
       { text: 'Used their tails as pillows', type: 'silly' }
     ]
   },
@@ -2585,8 +2585,8 @@ export const QUESTIONS = [
     q: 'Old models showed T. rex standing straight up like a kangaroo. Today scientists show it...',
     answers: [
       { text: 'With its body level and tail held out straight', correct: true },
-      { text: 'Lying on its back', type: 'believable' },
-      { text: 'Standing on its head', type: 'kinda' },
+      { text: 'Leaning forward on its arms', type: 'believable' },
+      { text: 'Walking on four legs', type: 'kinda' },
       { text: 'Doing yoga', type: 'silly' }
     ]
   },
@@ -2596,7 +2596,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Crystal Palace Park in London', correct: true },
       { text: 'Central Park in New York', type: 'believable' },
-      { text: 'Disneyland', type: 'kinda' },
+      { text: 'Hyde Park in London', type: 'kinda' },
       { text: 'Jurassic Park', type: 'silly' }
     ]
   },
@@ -2616,7 +2616,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Fish scales', correct: true },
       { text: 'Pine cones', type: 'believable' },
-      { text: 'Gold coins', type: 'kinda' },
+      { text: 'Small stones', type: 'kinda' },
       { text: 'A teddy bear', type: 'silly' }
     ]
   },
@@ -2646,7 +2646,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Different foods, including birds, fish, and lizards', correct: true },
       { text: 'Only leaves', type: 'believable' },
-      { text: 'Only rocks', type: 'kinda' },
+      { text: 'Only insects', type: 'kinda' },
       { text: 'Only cupcakes', type: 'silly' }
     ]
   },
@@ -2757,8 +2757,8 @@ export const QUESTIONS = [
     q: 'Stegosaurus plates had grooves for blood vessels, so they may have helped with...',
     answers: [
       { text: 'Showing off or warming and cooling its body', correct: true },
-      { text: 'Flying', type: 'believable' },
-      { text: 'Breathing underwater', type: 'kinda' },
+      { text: 'Digging', type: 'believable' },
+      { text: 'Storing food', type: 'kinda' },
       { text: 'Wi-Fi', type: 'silly' }
     ]
   },
@@ -2767,8 +2767,8 @@ export const QUESTIONS = [
     q: 'Scientists think Triceratops used its horns for...',
     answers: [
       { text: 'Showing off and battling rivals', correct: true },
-      { text: 'Digging for gold', type: 'believable' },
-      { text: 'Flying', type: 'kinda' },
+      { text: 'Digging up roots', type: 'believable' },
+      { text: 'Knocking down trees', type: 'kinda' },
       { text: 'Opening cans', type: 'silly' }
     ]
   },
@@ -2777,8 +2777,8 @@ export const QUESTIONS = [
     q: 'Troodon had big eyes that may have helped it see in...',
     answers: [
       { text: 'Dim light', correct: true },
-      { text: 'Outer space', type: 'believable' },
-      { text: 'X-ray vision', type: 'kinda' },
+      { text: 'Muddy water', type: 'believable' },
+      { text: 'Bright sunlight only', type: 'kinda' },
       { text: '3D movies', type: 'silly' }
     ]
   },
@@ -2788,7 +2788,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Chewing tough plants', correct: true },
       { text: 'Catching fish in the ocean', type: 'believable' },
-      { text: 'Flying', type: 'kinda' },
+      { text: 'Cracking nuts', type: 'kinda' },
       { text: 'Singing quack songs', type: 'silly' }
     ]
   },
@@ -2797,8 +2797,8 @@ export const QUESTIONS = [
     q: "Giant sauropods didn't really chew. Instead they...",
     answers: [
       { text: 'Swallowed plants whole or in big bites', correct: true },
-      { text: 'Drank smoothies', type: 'believable' },
-      { text: 'Ate only rocks', type: 'kinda' },
+      { text: 'Chewed slowly like cows', type: 'believable' },
+      { text: 'Sucked up water plants', type: 'kinda' },
       { text: 'Chewed each bite for hours', type: 'silly' }
     ]
   },
@@ -2818,7 +2818,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Very quickly, in a few decades or less', correct: true },
       { text: 'In one week', type: 'believable' },
-      { text: 'Never; they stayed tiny', type: 'kinda' },
+      { text: 'Over about 500 years', type: 'kinda' },
       { text: 'Over a billion years', type: 'silly' }
     ]
   },
@@ -2838,7 +2838,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Pin down and hold its prey', correct: true },
       { text: 'Dig tunnels', type: 'believable' },
-      { text: 'Climb buildings', type: 'kinda' },
+      { text: 'Climb trees', type: 'kinda' },
       { text: 'Comb its feathers', type: 'silly' }
     ]
   },
@@ -2848,7 +2848,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Showing off and recognizing each other', correct: true },
       { text: 'Storing water', type: 'believable' },
-      { text: 'Holding snacks', type: 'kinda' },
+      { text: 'Breaking branches', type: 'kinda' },
       { text: 'Wi-Fi antennas', type: 'silly' }
     ]
   },
@@ -2857,8 +2857,8 @@ export const QUESTIONS = [
     q: 'Fossils show Psittacosaurus was darker on top and lighter underneath, which helped it...',
     answers: [
       { text: 'Blend into the forest', correct: true },
-      { text: 'Glow in the dark', type: 'believable' },
-      { text: 'Fly', type: 'kinda' },
+      { text: 'Stay cool in the sun', type: 'believable' },
+      { text: 'Scare away predators', type: 'kinda' },
       { text: 'Look like a zebra', type: 'silly' }
     ]
   },
@@ -2868,7 +2868,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Reddish-brown and white', correct: true },
       { text: 'Green and purple', type: 'believable' },
-      { text: 'Neon pink', type: 'kinda' },
+      { text: 'Black and yellow', type: 'kinda' },
       { text: 'Plaid', type: 'silly' }
     ]
   },
@@ -2888,7 +2888,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Reddish-brown on top and lighter underneath', correct: true },
       { text: 'Bright green', type: 'believable' },
-      { text: 'Hot pink', type: 'kinda' },
+      { text: 'Spotted like a leopard', type: 'kinda' },
       { text: 'Gold and sparkly', type: 'silly' }
     ]
   },
@@ -2907,8 +2907,8 @@ export const QUESTIONS = [
     q: 'Oryctodromeus is a small dinosaur found inside a...',
     answers: [
       { text: 'Burrow it may have dug', correct: true },
-      { text: 'Tree house', type: 'believable' },
-      { text: 'Volcano', type: 'kinda' },
+      { text: 'Cave', type: 'believable' },
+      { text: 'Hollow log', type: 'kinda' },
       { text: 'Snow fort', type: 'silly' }
     ]
   },
@@ -2927,8 +2927,8 @@ export const QUESTIONS = [
     q: 'Giant scrape marks in rock may show that some dinosaurs...',
     answers: [
       { text: 'Danced to attract a mate, like some birds do', correct: true },
-      { text: 'Wrote letters', type: 'believable' },
-      { text: 'Drew maps', type: 'kinda' },
+      { text: 'Dug for water', type: 'believable' },
+      { text: 'Sharpened their claws', type: 'kinda' },
       { text: 'Played tic-tac-toe', type: 'silly' }
     ]
   },
@@ -2947,7 +2947,7 @@ export const QUESTIONS = [
     q: 'Scientists think Ankylosaurus swung its tail club to...',
     answers: [
       { text: 'Defend itself', correct: true },
-      { text: 'Play golf', type: 'believable' },
+      { text: 'Knock fruit from trees', type: 'believable' },
       { text: 'Dig holes', type: 'kinda' },
       { text: 'Knock on doors', type: 'silly' }
     ]
@@ -2987,8 +2987,8 @@ export const QUESTIONS = [
     q: 'At Dinosaur Valley State Park in Texas, you can see dinosaur footprints in a...',
     answers: [
       { text: 'Riverbed', correct: true },
-      { text: 'Shopping mall', type: 'believable' },
-      { text: 'Cloud', type: 'kinda' },
+      { text: 'Cave', type: 'believable' },
+      { text: 'Desert', type: 'kinda' },
       { text: 'Swimming pool', type: 'silly' }
     ]
   },
@@ -3008,7 +3008,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Watch for danger all around', correct: true },
       { text: 'See better underwater', type: 'believable' },
-      { text: 'Look cool', type: 'kinda' },
+      { text: 'See at night', type: 'kinda' },
       { text: 'Read two books at once', type: 'silly' }
     ]
   },
@@ -3017,8 +3017,8 @@ export const QUESTIONS = [
     q: 'Like birds, dinosaurs probably got rid of extra waste as...',
     answers: [
       { text: 'A white pasty goo instead of lots of pee', correct: true },
-      { text: 'Rainbow juice', type: 'believable' },
-      { text: 'Lemonade', type: 'kinda' },
+      { text: 'Lots of pee, like mammals', type: 'believable' },
+      { text: 'Sweat', type: 'kinda' },
       { text: 'Steam', type: 'silly' }
     ]
   },
@@ -3037,7 +3037,7 @@ export const QUESTIONS = [
     q: 'Some plant-eating dinosaurs may have had a gizzard, a stomach part that...',
     answers: [
       { text: 'Grinds food using swallowed stones', correct: true },
-      { text: 'Makes fire', type: 'believable' },
+      { text: 'Stores fat', type: 'believable' },
       { text: 'Stores water like a camel', type: 'kinda' },
       { text: 'Plays music', type: 'silly' }
     ]
@@ -3047,8 +3047,8 @@ export const QUESTIONS = [
     q: 'One way nodosaurs were different from ankylosaurids is that nodosaurs...',
     answers: [
       { text: 'Had no tail club', correct: true },
-      { text: 'Could fly', type: 'believable' },
-      { text: 'Had sails', type: 'kinda' },
+      { text: 'Had a tall crest', type: 'believable' },
+      { text: 'Had no armor', type: 'kinda' },
       { text: 'Wore hats', type: 'silly' }
     ]
   },
@@ -3078,7 +3078,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Dracorex hogwartsia', correct: true },
       { text: 'Draconyx', type: 'believable' },
-      { text: 'Wizardosaurus', type: 'kinda' },
+      { text: 'Hogwartsia rex', type: 'kinda' },
       { text: 'Harrypottersaurus', type: 'silly' }
     ]
   },
@@ -3097,7 +3097,7 @@ export const QUESTIONS = [
     q: 'Which small raptor was named after a famous cartoon deer?',
     answers: [
       { text: 'Bambiraptor', correct: true },
-      { text: 'Deerasaurus', type: 'believable' },
+      { text: 'Fawnasaurus', type: 'believable' },
       { text: 'Velociraptor', type: 'kinda' },
       { text: 'Rudolphosaurus', type: 'silly' }
     ]
@@ -3178,7 +3178,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'American Museum of Natural History', correct: true },
       { text: 'The Louvre', type: 'believable' },
-      { text: 'The Statue of Liberty', type: 'kinda' },
+      { text: 'The Metropolitan Museum of Art', type: 'kinda' },
       { text: 'The Museum of Snacks', type: 'silly' }
     ]
   },
@@ -3207,8 +3207,8 @@ export const QUESTIONS = [
     q: 'A rancher in Wyoming once built a cabin out of...',
     answers: [
       { text: 'Dinosaur bones', correct: true },
-      { text: 'Pizza boxes', type: 'believable' },
-      { text: 'Ice', type: 'kinda' },
+      { text: 'Petrified wood', type: 'believable' },
+      { text: 'Sod and logs', type: 'kinda' },
       { text: 'Gold bars', type: 'silly' }
     ]
   },
@@ -3229,8 +3229,8 @@ export const QUESTIONS = [
     q: 'Pterosaur footprints show they walked on...',
     answers: [
       { text: 'All fours, using folded wings as front legs', correct: true },
-      { text: 'Only their wingtips', type: 'believable' },
-      { text: 'One leg', type: 'kinda' },
+      { text: 'Only their two back legs', type: 'believable' },
+      { text: 'Their wingtips and tail', type: 'kinda' },
       { text: 'Stilts', type: 'silly' }
     ]
   },
@@ -3240,7 +3240,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Neck', correct: true },
       { text: 'Tail', type: 'believable' },
-      { text: 'Nose', type: 'kinda' },
+      { text: 'Flippers', type: 'kinda' },
       { text: 'Tongue', type: 'silly' }
     ]
   },
@@ -3289,8 +3289,8 @@ export const QUESTIONS = [
     q: 'Deinosuchus was a giant crocodile relative that left bite marks on...',
     answers: [
       { text: 'Dinosaur bones', correct: true },
-      { text: 'Only plants', type: 'believable' },
-      { text: 'Only bugs', type: 'kinda' },
+      { text: 'Turtle shells only', type: 'believable' },
+      { text: 'Only fish bones', type: 'kinda' },
       { text: 'Pizza crusts', type: 'silly' }
     ]
   },
@@ -3300,7 +3300,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'After the non-bird dinosaurs died out', correct: true },
       { text: 'At the same time as T. rex', type: 'believable' },
-      { text: 'Before the first fish', type: 'kinda' },
+      { text: 'Before the first dinosaurs', type: 'kinda' },
       { text: 'In a giant shoebox', type: 'silly' }
     ]
   },
@@ -3310,7 +3310,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Long after the non-bird dinosaurs', correct: true },
       { text: 'At the same time as T. rex', type: 'believable' },
-      { text: 'Before the first fish', type: 'kinda' },
+      { text: 'Before the first dinosaurs', type: 'kinda' },
       { text: 'In a fish tank', type: 'silly' }
     ]
   },
@@ -3320,7 +3320,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Yes, it was a bird, and birds are dinosaurs', correct: true },
       { text: 'No, it was a mammal', type: 'believable' },
-      { text: 'No, it was a fish', type: 'kinda' },
+      { text: 'No, it was a reptile', type: 'kinda' },
       { text: "It was a dinosaur's pet", type: 'silly' }
     ]
   },
@@ -3330,7 +3330,7 @@ export const QUESTIONS = [
     answers: [
       { text: "No, they're a different group of reptiles", correct: true },
       { text: 'Yes, all reptiles are dinosaurs', type: 'believable' },
-      { text: 'Yes, but only small ones', type: 'kinda' },
+      { text: 'Yes, they are tiny dinosaurs', type: 'kinda' },
       { text: 'Only on weekends', type: 'silly' }
     ]
   },
@@ -3340,7 +3340,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'A big lizard, not a dinosaur', correct: true },
       { text: 'A baby dinosaur', type: 'believable' },
-      { text: 'A real dragon', type: 'kinda' },
+      { text: 'A kind of crocodile', type: 'kinda' },
       { text: "A dinosaur's grandpa", type: 'silly' }
     ]
   },
@@ -3350,7 +3350,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Close cousins of dinosaurs, but not dinosaurs', correct: true },
       { text: 'Dinosaurs', type: 'believable' },
-      { text: 'Fish', type: 'kinda' },
+      { text: 'Lizards', type: 'kinda' },
       { text: 'Mammals', type: 'silly' }
     ]
   },
@@ -3359,8 +3359,8 @@ export const QUESTIONS = [
     q: 'Turtles were around at the same time as...',
     answers: [
       { text: 'The dinosaurs', correct: true },
-      { text: 'Only humans', type: 'believable' },
-      { text: 'Only robots', type: 'kinda' },
+      { text: 'Only mammoths', type: 'believable' },
+      { text: 'Only the first fish', type: 'kinda' },
       { text: 'Nobody at all', type: 'silly' }
     ]
   },
@@ -3380,7 +3380,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Squid and octopuses', correct: true },
       { text: 'Land snails', type: 'believable' },
-      { text: 'Dinosaur eggs', type: 'kinda' },
+      { text: 'Crabs', type: 'kinda' },
       { text: 'Cinnamon rolls', type: 'silly' }
     ]
   },
@@ -3390,7 +3390,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Only bird dinosaurs did; the others were long gone', correct: true },
       { text: 'Yes, all of them', type: 'believable' },
-      { text: 'Yes, wearing sweaters', type: 'kinda' },
+      { text: 'Yes, the furry ones', type: 'kinda' },
       { text: 'Only T. rex', type: 'silly' }
     ]
   },
@@ -3450,7 +3450,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Lots of other reptiles, some bigger than them', correct: true },
       { text: 'T. rex', type: 'believable' },
-      { text: 'People', type: 'kinda' },
+      { text: 'Woolly mammoths', type: 'kinda' },
       { text: 'Robots', type: 'silly' }
     ]
   },
@@ -3460,7 +3460,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Sauropods like Brachiosaurus and Diplodocus', correct: true },
       { text: 'Woolly mammoths', type: 'believable' },
-      { text: 'Sharks only', type: 'kinda' },
+      { text: 'Saber-toothed cats', type: 'kinda' },
       { text: 'Teddy bears', type: 'silly' }
     ]
   },
@@ -3489,8 +3489,8 @@ export const QUESTIONS = [
     q: 'Bite marks show that Majungasaurus, a meat-eater from Madagascar, sometimes ate...',
     answers: [
       { text: 'Other Majungasaurus', correct: true },
-      { text: 'Only fruit', type: 'believable' },
-      { text: 'Nothing at all', type: 'kinda' },
+      { text: 'Only eggs', type: 'believable' },
+      { text: 'Only plants', type: 'kinda' },
       { text: 'Pancakes', type: 'silly' }
     ]
   },
@@ -3500,7 +3500,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'The Sahara Desert', correct: true },
       { text: 'A rainforest', type: 'believable' },
-      { text: 'A frozen tundra', type: 'kinda' },
+      { text: 'A big lake', type: 'kinda' },
       { text: 'A giant mall', type: 'silly' }
     ]
   },
@@ -3519,8 +3519,8 @@ export const QUESTIONS = [
     q: 'Which island off southern England is famous for dinosaur fossils?',
     answers: [
       { text: 'The Isle of Wight', correct: true },
-      { text: 'Hawaii', type: 'believable' },
-      { text: 'Greenland', type: 'kinda' },
+      { text: 'The Isle of Man', type: 'believable' },
+      { text: 'Jersey', type: 'kinda' },
       { text: 'Treasure Island', type: 'silly' }
     ]
   },
@@ -3529,8 +3529,8 @@ export const QUESTIONS = [
     q: 'Dinosaur fossils found in Alaska show that some dinosaurs lived...',
     answers: [
       { text: 'Far north, where winters were dark', correct: true },
-      { text: 'Only inside volcanoes', type: 'believable' },
-      { text: 'On the Moon', type: 'kinda' },
+      { text: 'Only in summer', type: 'believable' },
+      { text: 'Under the ice', type: 'kinda' },
       { text: 'In igloos', type: 'silly' }
     ]
   },
@@ -3539,7 +3539,7 @@ export const QUESTIONS = [
     q: 'Scientists mostly figure out how old fossils are by studying the age of...',
     answers: [
       { text: 'The rock layers around them', correct: true },
-      { text: "The fossil's smell", type: 'believable' },
+      { text: "The fossil's weight", type: 'believable' },
       { text: "The fossil's color", type: 'kinda' },
       { text: 'Its birthday party photos', type: 'silly' }
     ]
@@ -3560,7 +3560,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Plaster jackets', correct: true },
       { text: 'Bubble wrap', type: 'believable' },
-      { text: 'Tinfoil', type: 'kinda' },
+      { text: 'Newspaper only', type: 'kinda' },
       { text: 'Tortillas', type: 'silly' }
     ]
   },
@@ -3569,8 +3569,8 @@ export const QUESTIONS = [
     q: 'To carefully uncover small fossils, paleontologists often use...',
     answers: [
       { text: 'Brushes and small picks', correct: true },
-      { text: 'Only bulldozers', type: 'believable' },
-      { text: 'Fireworks', type: 'kinda' },
+      { text: 'Big shovels', type: 'believable' },
+      { text: 'Power drills', type: 'kinda' },
       { text: 'Spoons and forks', type: 'silly' }
     ]
   },
@@ -3579,7 +3579,7 @@ export const QUESTIONS = [
     q: 'Cleaning rock off a fossil in a lab is called...',
     answers: [
       { text: 'Fossil preparation', correct: true },
-      { text: 'Fossil baking', type: 'believable' },
+      { text: 'Fossil casting', type: 'believable' },
       { text: 'Bone washing', type: 'kinda' },
       { text: 'Dino spa day', type: 'silly' }
     ]
@@ -3589,8 +3589,8 @@ export const QUESTIONS = [
     q: 'A place with lots of fossil bones packed together is called a...',
     answers: [
       { text: 'Bonebed', correct: true },
-      { text: 'Bone mountain', type: 'believable' },
-      { text: 'Skeleton closet', type: 'kinda' },
+      { text: 'Bone field', type: 'believable' },
+      { text: 'Fossil nest', type: 'kinda' },
       { text: 'Boneyard buffet', type: 'silly' }
     ]
   },
@@ -3599,8 +3599,8 @@ export const QUESTIONS = [
     q: 'Why is it rare for an animal to become a fossil?',
     answers: [
       { text: "Most bodies rot or get eaten before they're buried", correct: true },
-      { text: 'Fossils are against the law', type: 'believable' },
-      { text: 'Animals hide their bones', type: 'kinda' },
+      { text: 'Bones melt over time', type: 'believable' },
+      { text: 'Rocks are too hard for fossils to form', type: 'kinda' },
       { text: 'Fossils run away', type: 'silly' }
     ]
   },
@@ -3609,8 +3609,8 @@ export const QUESTIONS = [
     q: 'Museums often show copies of skeletons because real fossil bones are...',
     answers: [
       { text: 'Very heavy and fragile', correct: true },
-      { text: 'Invisible', type: 'believable' },
-      { text: 'Too shiny', type: 'kinda' },
+      { text: 'Too valuable to show', type: 'believable' },
+      { text: 'Too dirty to clean', type: 'kinda' },
       { text: 'Ticklish', type: 'silly' }
     ]
   },
@@ -3620,7 +3620,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, most skeletons are only partly there', correct: true },
       { text: 'Yes, always', type: 'believable' },
-      { text: 'Only on Sundays', type: 'kinda' },
+      { text: 'Yes, most of the time', type: 'kinda' },
       { text: 'Yes, already put together', type: 'silly' }
     ]
   },
@@ -3630,7 +3630,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Yes, kids have made real discoveries', correct: true },
       { text: 'No, never', type: 'believable' },
-      { text: 'No, only grownups can find fossils', type: 'kinda' },
+      { text: 'Only once, a long time ago', type: 'kinda' },
       { text: 'Only kids wearing capes', type: 'silly' }
     ]
   },
@@ -3669,8 +3669,8 @@ export const QUESTIONS = [
     q: 'When the first Triceratops horns were found, a scientist thought they belonged to a giant...',
     answers: [
       { text: 'Bison', correct: true },
-      { text: 'Shark', type: 'believable' },
-      { text: 'Bird', type: 'kinda' },
+      { text: 'Rhino', type: 'believable' },
+      { text: 'Deer', type: 'kinda' },
       { text: 'Unicorn', type: 'silly' }
     ]
   },
@@ -3689,8 +3689,8 @@ export const QUESTIONS = [
     q: 'When Stegosaurus was first described, scientists thought its plates...',
     answers: [
       { text: "Lay flat like a turtle's shell", correct: true },
-      { text: 'Were wings', type: 'believable' },
-      { text: 'Were extra teeth', type: 'kinda' },
+      { text: 'Stood up in one row', type: 'believable' },
+      { text: 'Were scales on its tail', type: 'kinda' },
       { text: 'Spun like a fan', type: 'silly' }
     ]
   },
@@ -3699,8 +3699,8 @@ export const QUESTIONS = [
     q: 'Hadrosaurus, found in New Jersey in 1858, was one of the first...',
     answers: [
       { text: 'Nearly complete dinosaur skeletons ever found', correct: true },
-      { text: 'Flying dinosaurs', type: 'believable' },
-      { text: 'Dinosaurs with fur', type: 'kinda' },
+      { text: 'Dinosaur eggs', type: 'believable' },
+      { text: 'Meat-eating dinosaurs', type: 'kinda' },
       { text: 'Dinosaurs in space', type: 'silly' }
     ]
   },
@@ -3720,7 +3720,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, dinosaur DNA is far too old to survive', correct: true },
       { text: 'Yes, easily', type: 'believable' },
-      { text: 'Yes, using mosquitoes from a store', type: 'kinda' },
+      { text: 'Yes, from frozen dinosaurs', type: 'kinda' },
       { text: 'Only on weekends', type: 'silly' }
     ]
   },
@@ -3831,8 +3831,8 @@ export const QUESTIONS = [
     q: 'Velociraptor means...',
     answers: [
       { text: '\'Swift thief\'', correct: true },
-      { text: '\'Fast eagle\'', type: 'believable' },
-      { text: '\'Velvet raptor\'', type: 'kinda' },
+      { text: 'Fast eagle', type: 'believable' },
+      { text: 'Speedy hunter', type: 'kinda' },
       { text: '\'Bicycle robber\'', type: 'silly' }
     ]
   },
@@ -3851,8 +3851,8 @@ export const QUESTIONS = [
     q: 'Pachycephalosaurus means...',
     answers: [
       { text: '\'Thick-headed lizard\'', correct: true },
-      { text: '\'Packing lizard\'', type: 'believable' },
-      { text: '\'Hard-hat king\'', type: 'kinda' },
+      { text: 'Packing lizard', type: 'believable' },
+      { text: 'Thick-skinned lizard', type: 'kinda' },
       { text: '\'Pancake head\'', type: 'silly' }
     ]
   },
@@ -3921,8 +3921,8 @@ export const QUESTIONS = [
     q: 'Deinonychus means...',
     answers: [
       { text: '\'Terrible claw\'', correct: true },
-      { text: '\'Fast toe\'', type: 'believable' },
-      { text: '\'Dinner hunter\'', type: 'kinda' },
+      { text: 'Fast toe', type: 'believable' },
+      { text: 'Deadly hunter', type: 'kinda' },
       { text: '\'Dino onion\'', type: 'silly' }
     ]
   },
@@ -3931,8 +3931,8 @@ export const QUESTIONS = [
     q: 'Ceratosaurus means...',
     answers: [
       { text: '\'Horned lizard\'', correct: true },
-      { text: '\'Crested king\'', type: 'believable' },
-      { text: '\'Ceramic lizard\'', type: 'kinda' },
+      { text: 'Crested king', type: 'believable' },
+      { text: 'Corner lizard', type: 'kinda' },
       { text: '\'Cereal lizard\'', type: 'silly' }
     ]
   },
@@ -3941,8 +3941,8 @@ export const QUESTIONS = [
     q: 'Troodon means...',
     answers: [
       { text: '\'Wounding tooth\'', correct: true },
-      { text: '\'Tree tooth\'', type: 'believable' },
-      { text: '\'Trouble tooth\'', type: 'kinda' },
+      { text: 'Tree tooth', type: 'believable' },
+      { text: 'Sharp tooth', type: 'kinda' },
       { text: '\'Troll don\'', type: 'silly' }
     ]
   },
@@ -4002,7 +4002,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, they lived millions of years apart on different continents', correct: true },
       { text: 'Yes, in Argentina', type: 'believable' },
-      { text: 'Yes, every Saturday', type: 'kinda' },
+      { text: 'Yes, in North America', type: 'kinda' },
       { text: 'Only in museums at night', type: 'silly' }
     ]
   },
@@ -4012,7 +4012,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, they lived on different continents at different times', correct: true },
       { text: 'Yes, they fought in a river', type: 'believable' },
-      { text: 'Yes, they were best friends', type: 'kinda' },
+      { text: 'Yes, in Africa', type: 'kinda' },
       { text: 'Yes, at the dentist', type: 'silly' }
     ]
   },
@@ -4042,7 +4042,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Brachiosaurus', correct: true },
       { text: 'T. rex', type: 'believable' },
-      { text: 'They were exactly the same size', type: 'kinda' },
+      { text: 'They were about the same size', type: 'kinda' },
       { text: 'A hamster', type: 'silly' }
     ]
   },
@@ -4181,8 +4181,8 @@ export const QUESTIONS = [
     q: 'Duck-billed dinosaurs could probably walk on...',
     answers: [
       { text: 'Two legs or four legs', correct: true },
-      { text: 'Only their tails', type: 'believable' },
-      { text: 'Only their front legs', type: 'kinda' },
+      { text: 'Only four legs', type: 'believable' },
+      { text: 'Only two legs', type: 'kinda' },
       { text: 'Stilts', type: 'silly' }
     ]
   },
@@ -4222,7 +4222,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'No, most feathered dinosaurs could not fly', correct: true },
       { text: 'Yes, all of them', type: 'believable' },
-      { text: 'Only the giant ones', type: 'kinda' },
+      { text: 'Only the small ones', type: 'kinda' },
       { text: 'Only when it rained', type: 'silly' }
     ]
   },
@@ -4234,7 +4234,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Late Triassic', correct: true },
       { text: 'Late Cretaceous', type: 'believable' },
-      { text: 'The Ice Age', type: 'kinda' },
+      { text: 'Jurassic', type: 'kinda' },
       { text: 'The Pizza Period', type: 'silly' }
     ]
   },
@@ -4253,8 +4253,8 @@ export const QUESTIONS = [
     q: 'Mussaurus means \'mouse lizard\' because the first fossils found were...',
     answers: [
       { text: 'Tiny babies', correct: true },
-      { text: 'Actual mice', type: 'believable' },
-      { text: 'Mouse-shaped rocks', type: 'kinda' },
+      { text: 'Small adults', type: 'believable' },
+      { text: 'Found in a mouse burrow', type: 'kinda' },
       { text: 'Wearing cheese hats', type: 'silly' }
     ]
   },
@@ -4274,7 +4274,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Thick bony bump', correct: true },
       { text: 'Long tusk', type: 'believable' },
-      { text: 'Feathered pom-pom', type: 'kinda' },
+      { text: 'Tall crest', type: 'kinda' },
       { text: 'Trumpet', type: 'silly' }
     ]
   },
@@ -4303,8 +4303,8 @@ export const QUESTIONS = [
     q: 'Nanuqsaurus means \'polar bear lizard\' in the language of the...',
     answers: [
       { text: 'Iñupiat people of Alaska', correct: true },
-      { text: 'Ancient Romans', type: 'believable' },
-      { text: 'Vikings', type: 'kinda' },
+      { text: 'Sami people of Norway', type: 'believable' },
+      { text: 'Ancient Greeks', type: 'kinda' },
       { text: 'Penguins', type: 'silly' }
     ]
   },
@@ -4313,8 +4313,8 @@ export const QUESTIONS = [
     q: 'Saltasaurus was a sauropod with something unusual for its group:',
     answers: [
       { text: 'Bony armor in its skin', correct: true },
-      { text: 'Wings', type: 'believable' },
-      { text: 'A duck bill', type: 'kinda' },
+      { text: 'Feathers', type: 'believable' },
+      { text: 'A crest', type: 'kinda' },
       { text: 'A trumpet nose', type: 'silly' }
     ]
   },
@@ -4334,7 +4334,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Pointed hump on its back', correct: true },
       { text: 'Trunk like an elephant', type: 'believable' },
-      { text: 'Third arm', type: 'kinda' },
+      { text: 'Horn on its nose', type: 'kinda' },
       { text: 'Propeller', type: 'silly' }
     ]
   },
@@ -4344,7 +4344,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Tail', correct: true },
       { text: 'Nose', type: 'believable' },
-      { text: 'Knees', type: 'kinda' },
+      { text: 'Head', type: 'kinda' },
       { text: 'Hat', type: 'silly' }
     ]
   },
@@ -4353,8 +4353,8 @@ export const QUESTIONS = [
     q: 'Yi qi, a tiny dinosaur from China, had wings made of...',
     answers: [
       { text: 'Skin stretched between long fingers, like a bat', correct: true },
-      { text: 'Leaves', type: 'believable' },
-      { text: 'Scales only', type: 'kinda' },
+      { text: 'Feathers only', type: 'believable' },
+      { text: 'Scales', type: 'kinda' },
       { text: 'Paper', type: 'silly' }
     ]
   },
@@ -4403,7 +4403,7 @@ export const QUESTIONS = [
     q: 'Masiakasaurus had front teeth that...',
     answers: [
       { text: 'Stuck forward, out of its mouth', correct: true },
-      { text: 'Were made of iron', type: 'believable' },
+      { text: 'Were missing', type: 'believable' },
       { text: "Were flat like a cow's", type: 'kinda' },
       { text: 'Glowed in the dark', type: 'silly' }
     ]
@@ -4433,7 +4433,7 @@ export const QUESTIONS = [
     q: '\'Baby Louie\' is a famous fossil of a...',
     answers: [
       { text: 'Dinosaur embryo found with giant eggs', correct: true },
-      { text: 'Baby T. rex in a stroller', type: 'believable' },
+      { text: 'Baby T. rex', type: 'believable' },
       { text: 'Baby mammoth', type: 'kinda' },
       { text: 'Baby shark', type: 'silly' }
     ]
@@ -4444,7 +4444,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Yes, some embryos have been found', correct: true },
       { text: 'No, never', type: 'believable' },
-      { text: 'Only in movies', type: 'kinda' },
+      { text: 'Only bird embryos', type: 'kinda' },
       { text: 'Yes, wearing tiny diapers', type: 'silly' }
     ]
   },
@@ -4453,8 +4453,8 @@ export const QUESTIONS = [
     q: 'A fossil embryo nicknamed \'Baby Yingliang\' was curled up inside its egg like...',
     answers: [
       { text: 'A baby bird getting ready to hatch', correct: true },
-      { text: 'A sleeping cat', type: 'believable' },
-      { text: 'A starfish', type: 'kinda' },
+      { text: 'A snake', type: 'believable' },
+      { text: 'A ball', type: 'kinda' },
       { text: 'A burrito', type: 'silly' }
     ]
   },
@@ -4463,8 +4463,8 @@ export const QUESTIONS = [
     q: 'Some dinosaurs may have kept their eggs warm by burying them in...',
     answers: [
       { text: 'Warm soil or rotting plants', correct: true },
-      { text: 'Snow', type: 'believable' },
-      { text: 'Lava', type: 'kinda' },
+      { text: 'Cold mud', type: 'believable' },
+      { text: 'Snow', type: 'kinda' },
       { text: 'A sock drawer', type: 'silly' }
     ]
   },
@@ -4484,7 +4484,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Small and curved backward', correct: true },
       { text: 'Already full size', type: 'believable' },
-      { text: 'On their tails', type: 'kinda' },
+      { text: 'Straight and pointed forward', type: 'kinda' },
       { text: 'As cute little bows', type: 'silly' }
     ]
   },
@@ -4513,8 +4513,8 @@ export const QUESTIONS = [
     q: 'After the asteroid hit, dust and soot in the sky...',
     answers: [
       { text: 'Blocked sunlight and made the world colder', correct: true },
-      { text: 'Made rainbows every day', type: 'believable' },
-      { text: 'Turned the oceans pink', type: 'kinda' },
+      { text: 'Made the world much hotter', type: 'believable' },
+      { text: 'Caused it to rain all the time', type: 'kinda' },
       { text: 'Made it snow marshmallows', type: 'silly' }
     ]
   },
@@ -4524,7 +4524,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Smaller animals', correct: true },
       { text: 'Only the biggest animals', type: 'believable' },
-      { text: 'Only T. rex', type: 'kinda' },
+      { text: 'Only sea animals', type: 'kinda' },
       { text: 'Only unicorns', type: 'silly' }
     ]
   },
@@ -4606,7 +4606,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Walk on mud or paddle', correct: true },
       { text: 'Climb trees', type: 'believable' },
-      { text: 'Ski down hills', type: 'kinda' },
+      { text: 'Dig burrows', type: 'kinda' },
       { text: 'Tap dance', type: 'silly' }
     ]
   },
@@ -4625,8 +4625,8 @@ export const QUESTIONS = [
     q: "Spinosaurus's nostrils were far back on its snout, which may have helped it...",
     answers: [
       { text: 'Breathe while its snout was in the water', correct: true },
-      { text: 'Smell flowers', type: 'believable' },
-      { text: 'Sneeze better', type: 'kinda' },
+      { text: 'Smell far away', type: 'believable' },
+      { text: 'Make loud calls', type: 'kinda' },
       { text: 'Whistle songs', type: 'silly' }
     ]
   },
@@ -4655,8 +4655,8 @@ export const QUESTIONS = [
     q: 'A mummified Edmontosaurus showed it had a fleshy...',
     answers: [
       { text: "Crest on its head, like a rooster's comb", correct: true },
-      { text: 'Trunk', type: 'believable' },
-      { text: 'Mane', type: 'kinda' },
+      { text: 'Horn on its nose', type: 'believable' },
+      { text: 'Sail on its back', type: 'kinda' },
       { text: 'Third eye', type: 'silly' }
     ]
   },
@@ -4665,8 +4665,8 @@ export const QUESTIONS = [
     q: 'Sue the T. rex had many old injuries that had...',
     answers: [
       { text: 'Healed, so it survived them', correct: true },
-      { text: 'Turned to gold', type: 'believable' },
-      { text: 'Been bandaged', type: 'kinda' },
+      { text: 'Killed it right away', type: 'believable' },
+      { text: 'Never healed', type: 'kinda' },
       { text: 'Been caused by a skateboard', type: 'silly' }
     ]
   },
@@ -4675,8 +4675,8 @@ export const QUESTIONS = [
     q: 'Fossils show dinosaurs could get sick, including with...',
     answers: [
       { text: 'Bone infections', correct: true },
-      { text: 'Colds from eating ice cream', type: 'believable' },
-      { text: 'Too much screen time', type: 'kinda' },
+      { text: 'Chickenpox', type: 'believable' },
+      { text: 'Sunburn', type: 'kinda' },
       { text: 'Sunburned noses', type: 'silly' }
     ]
   },
@@ -4685,8 +4685,8 @@ export const QUESTIONS = [
     q: "Iguanodon's pinky finger could...",
     answers: [
       { text: 'Bend to grab things', correct: true },
-      { text: 'Shoot lasers', type: 'believable' },
-      { text: 'Glow', type: 'kinda' },
+      { text: 'Spin all the way around', type: 'believable' },
+      { text: 'Turn into a hoof', type: 'kinda' },
       { text: 'Play the flute', type: 'silly' }
     ]
   },
@@ -4726,7 +4726,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Giants', correct: true },
       { text: 'Sea monsters', type: 'believable' },
-      { text: 'Tiny fairies', type: 'kinda' },
+      { text: 'Wise teachers', type: 'kinda' },
       { text: 'Pizza chefs', type: 'silly' }
     ]
   },
@@ -4746,7 +4746,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'Pokes out of the room toward the hallway', correct: true },
       { text: 'Touches the roof of the building', type: 'believable' },
-      { text: 'Sits on a chair', type: 'kinda' },
+      { text: 'Hangs from the ceiling', type: 'kinda' },
       { text: 'Wears a party hat', type: 'silly' }
     ]
   },
@@ -4785,7 +4785,7 @@ export const QUESTIONS = [
     q: 'Mononykus may have used its single claw to dig for...',
     answers: [
       { text: 'Insects like ants or termites', correct: true },
-      { text: 'Gold', type: 'believable' },
+      { text: 'Roots', type: 'believable' },
       { text: 'Water', type: 'kinda' },
       { text: 'Buried treasure', type: 'silly' }
     ]
@@ -4836,7 +4836,7 @@ export const QUESTIONS = [
     answers: [
       { text: 'An asteroid impact', correct: true },
       { text: 'A volcano', type: 'believable' },
-      { text: 'A giant dinosaur stomping', type: 'kinda' },
+      { text: 'An earthquake', type: 'kinda' },
       { text: 'A meteor shower of cupcakes', type: 'silly' }
     ]
   },
