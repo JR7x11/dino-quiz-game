@@ -22,14 +22,14 @@ export const DINOS = {
 // Which dinos have art for each part. Add a dino here once its art exists.
 export const PART_OPTIONS = {
   body: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus', 'ankylosaurus'],
-  arms: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus'],
-  head: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus'],
-  legs: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus'],
-  tail: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus']
+  arms: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus', 'ankylosaurus'],
+  head: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus', 'ankylosaurus'],
+  legs: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus', 'ankylosaurus'],
+  tail: ['trex', 'triceratops', 'stegosaurus', 'spinosaurus', 'brachiosaurus', 'ankylosaurus']
 };
 
 // Four-legged dinos have front legs, not arms.
-export const FRONT_LEGS = ['triceratops', 'stegosaurus', 'brachiosaurus'];
+export const FRONT_LEGS = ['triceratops', 'stegosaurus', 'brachiosaurus', 'ankylosaurus'];
 export function partLabel(dino, part) {
   if (part === 'arms' && FRONT_LEGS.includes(dino)) return `${DINOS[dino]} front legs`;
   return `${DINOS[dino]} ${part}`;
@@ -62,7 +62,7 @@ export const TEXTURES = {
 export const BODY_ANCHORS = {
   trex:          { tail_base: [130, 337], hip: [367, 422], shoulder: [628, 339], neck: [818, 259] },
   triceratops:   { tail_base: [128, 325], hip: [355, 400], shoulder: [645, 392], neck: [820, 242] }, // rounded-belly redraw
-  stegosaurus:   { tail_base: [145, 437], hip: [354, 457], shoulder: [639, 411], neck: [826, 383] },
+  stegosaurus:   { tail_base: [125, 428], hip: [355, 468], shoulder: [635, 460], neck: [828, 388] }, // rounded-belly redraw
   spinosaurus:   { tail_base: [149, 409], hip: [355, 444], shoulder: [640, 408], neck: [826, 339] },
   brachiosaurus: { tail_base: [128, 372], hip: [345, 432], shoulder: [658, 422], neck: [822, 268] }, // rounded-belly redraw
   ankylosaurus:  { tail_base: [150, 343], hip: [367, 392], shoulder: [647, 352], neck: [831, 303] }

@@ -27,10 +27,36 @@ export const ART = {
   trex_arms: { file: 'art/trex_arms.png', attach: [24, 8] },
 
   // Sutton's shaded bodies (same 960x600 canvas and anchor points as anchors.json).
-  // Triceratops, Stegosaurus and Brachiosaurus still have flat-cut bellies; swap in the fixed versions when ready.
   triceratops_body: { file: 'art/triceratops_body.png' },
   stegosaurus_body: { file: 'art/stegosaurus_body.png' },
   spinosaurus_body: { file: 'art/spinosaurus_body.png' },
   brachiosaurus_body: { file: 'art/brachiosaurus_body.png' },
-  ankylosaurus_body: { file: 'art/ankylosaurus_body.png' }
+  ankylosaurus_body: { file: 'art/ankylosaurus_body.png' },
+
+  // Legs from the second art batch. Single legs: the game adds a darker far-side copy behind the body.
+  // "arms" = front legs for these four-legged dinos.
+  triceratops_legs: { file: 'art/triceratops_legs.png', attach: [74, 58] },
+  triceratops_arms: { file: 'art/triceratops_arms.png', attach: [61, 54] },
+  stegosaurus_legs: { file: 'art/stegosaurus_legs.png', attach: [72, 60] },
+  stegosaurus_arms: { file: 'art/stegosaurus_arms.png', attach: [57, 50] },
+
+  // Third art batch: heads, legs, arms and the Ankylosaurus tail.
+  triceratops_head: { file: 'art/triceratops_head.png', attach: [34, 228] },
+  stegosaurus_head: { file: 'art/stegosaurus_head.png', attach: [27, 132] },
+  spinosaurus_head: { file: 'art/spinosaurus_head.png', attach: [36, 188] },
+  brachiosaurus_head: { file: 'art/brachiosaurus_head.png', attach: [30, 339] },
+  ankylosaurus_head: { file: 'art/ankylosaurus_head.png', attach: [26, 120] },
+  ankylosaurus_tail: { file: 'art/ankylosaurus_tail.png', attach: [391, 162] },
+  spinosaurus_legs: { file: 'art/spinosaurus_legs.png', attach: [89, 60] },
+  spinosaurus_arms: { file: 'art/spinosaurus_arms.png', attach: [47, 34] },
+  brachiosaurus_legs: { file: 'art/brachiosaurus_legs.png', attach: [79, 60] },
+  brachiosaurus_arms: { file: 'art/brachiosaurus_arms.png', attach: [74, 64] },
+  ankylosaurus_legs: { file: 'art/ankylosaurus_legs.png', attach: [65, 48] },
+  ankylosaurus_arms: { file: 'art/ankylosaurus_arms.png', attach: [52, 50] },
+
+  // Last four tails.
+  triceratops_tail: { file: 'art/triceratops_tail.png', attach: [362, 46] },
+  stegosaurus_tail: { file: 'art/stegosaurus_tail.png', attach: [435, 62] },
+  spinosaurus_tail: { file: 'art/spinosaurus_tail.png', attach: [490, 61] },
+  brachiosaurus_tail: { file: 'art/brachiosaurus_tail.png', attach: [508, 55] }
 };
