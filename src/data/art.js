@@ -24,5 +24,13 @@ export const ART = {
   trex_tail: { file: 'art/trex_tail.png', attach: [522, 45] },
   trex_legs: { file: 'art/trex_legs.png', attach: [162, 90], far: 'trex_legs_far' },
   trex_legs_far: { file: 'art/trex_legs_far.png', attach: [162, 90] },
-  trex_arms: { file: 'art/trex_arms.png', attach: [24, 8] }
+  trex_arms: { file: 'art/trex_arms.png', attach: [24, 8] },
+
+  // Sutton's shaded bodies (same 960x600 canvas and anchor points as anchors.json).
+  // Triceratops, Stegosaurus and Brachiosaurus still have flat-cut bellies; swap in the fixed versions when ready.
+  triceratops_body: { file: 'art/triceratops_body.png' },
+  stegosaurus_body: { file: 'art/stegosaurus_body.png' },
+  spinosaurus_body: { file: 'art/spinosaurus_body.png' },
+  brachiosaurus_body: { file: 'art/brachiosaurus_body.png' },
+  ankylosaurus_body: { file: 'art/ankylosaurus_body.png' }
 };
