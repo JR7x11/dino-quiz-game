@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { loadLazyArtInBackground } from '../lazyArt.js';
 import { loadSave, saveGame, dinoName } from '../save.js';
 import { buildDino, fitDino } from '../dino.js';
 import { txt, button, panel, overlay, FONT } from '../ui.js';
@@ -30,6 +31,7 @@ export default class StartScene extends Phaser.Scene {
   constructor() { super('Start'); }
 
   create() {
+    this.time.delayedCall(800, () => loadLazyArtInBackground(this));   // Trophy Room art, quietly in the background
     this.save = loadSave();
     this.drawBackground();
     txt(this, L.title[0], L.title[1], 'DINO MASH', L.title[2], { fontStyle: 'bold', stroke: '#ffffff', strokeThickness: 8 }).setOrigin(0.5);

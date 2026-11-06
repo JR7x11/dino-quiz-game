@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { queueLazyArt } from '../lazyArt.js';
 import { loadSave, saveGame, dinoName, isAhzir } from '../save.js';
 import { buildDino, fitDino } from '../dino.js';
 import { txt, button, panel, overlay } from '../ui.js';
@@ -21,6 +22,13 @@ const L = PORTRAIT ? {
 
 export default class FinishScene extends Phaser.Scene {
   constructor() { super('Finish'); }
+
+  preload() {
+    if (queueLazyArt(this)) {   // only if the background load hasn't finished yet
+      const t = this.add.text(this.scale.width / 2, this.scale.height / 2, 'Loading...', { fontFamily: 'Trebuchet MS, Verdana, sans-serif', fontSize: '32px', color: '#23401a', fontStyle: 'bold' }).setOrigin(0.5);
+      this.load.once('complete', () => t.destroy());
+    }
+  }
 
   create({ choice, correct, answered, dinoNick, stats = {} }) {
     const save = loadSave();

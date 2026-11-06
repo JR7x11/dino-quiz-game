@@ -16,10 +16,17 @@
       #game { width: 100%; max-width: 1100px; margin: 0 auto; }
       #save-area { text-align: center; padding: 16px 16px 40px; color: #23401a; }
       #save-area p { font-size: 20px; margin: 8px 0 12px; }
+      #loading { text-align: center; padding: 18vh 16px 0; color: #23401a; }
+      #loading h1 { font-size: clamp(48px, 12vw, 96px); margin: 0 0 12px; letter-spacing: 1px; color: #b34700; text-shadow: 0 4px 0 #23401a33; }
+      #loading p { font-size: 22px; margin: 0; }
+      #loading .track { display: inline-block; font-size: 40px; margin-top: 24px; animation: stomp 0.9s ease-in-out infinite alternate; }
+      @keyframes stomp { from { transform: translateY(0); } to { transform: translateY(-10px); } }
       #finalDino { max-width: min(600px, 100%); border: 4px solid #23401a; border-radius: 16px; background: #fff; }
     </style>
   </head>
   <body>
+    <!-- Shows instantly while the game loads; removed when the game starts. -->
+    <div id="loading"><h1>Dino Mash</h1><p>Loading dinosaurs&hellip;</p><div class="track">&#x1F996;</div></div>
     <div id="game"></div>
     <!-- The finished dino appears here as a normal image so it can be saved
          with right-click > Save image (or press-and-hold on a tablet). -->

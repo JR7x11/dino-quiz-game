@@ -1,6 +1,7 @@
 // The Trophy Room: the dino shelf (statues of finished dinos), collectible sets,
 // the player's 5 rarest trophies, and the save code. Scrolls up and down.
 import Phaser from 'phaser';
+import { queueLazyArt } from '../lazyArt.js';
 import { loadSave, saveGame } from '../save.js';
 import { buildDino, fitDino } from '../dino.js';
 import { txt, button, panel, FONT } from '../ui.js';
@@ -18,6 +19,13 @@ const POP = PORTRAIT ? [30, 150, 540, 640] : [170, 50, 620, 500];
 
 export default class TrophyScene extends Phaser.Scene {
   constructor() { super('Trophy'); }
+
+  preload() {
+    if (queueLazyArt(this)) {   // only if the background load hasn't finished yet
+      const t = this.add.text(this.scale.width / 2, this.scale.height / 2, 'Loading...', { fontFamily: 'Trebuchet MS, Verdana, sans-serif', fontSize: '32px', color: '#23401a', fontStyle: 'bold' }).setOrigin(0.5);
+      this.load.once('complete', () => t.destroy());
+    }
+  }
 
   create(data = {}) {
     this.save = loadSave();

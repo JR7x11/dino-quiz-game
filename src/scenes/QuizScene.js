@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { loadLazyArtInBackground } from '../lazyArt.js';
 import { loadSave, saveGame, dinoName, isAhzir } from '../save.js';
 import { QUESTIONS } from '../data/questions.js';
 import { FACTS } from '../data/facts.js';
@@ -48,6 +49,7 @@ export default class QuizScene extends Phaser.Scene {
   constructor() { super('Quiz'); }
 
   create() {
+    this.time.delayedCall(800, () => loadLazyArtInBackground(this));   // Trophy Room art, quietly in the background
     this.save = loadSave();
     this.choice = {};
     this.partIndex = 0;
